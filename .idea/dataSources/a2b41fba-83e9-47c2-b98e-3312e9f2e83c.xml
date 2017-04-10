@@ -1,0 +1,18 @@
+<dataSource name="MySQL - classCircle@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="classCircle">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="data" />
+    <schema id="3" name="demo" />
+    <schema id="4" name="demo_test" />
+    <schema id="5" name="HRPS" />
+    <schema id="6" name="information_schema" />
+    <schema id="7" name="ljMusic" />
+    <schema id="8" name="muggle" />
+    <schema id="9" name="mysql" />
+    <schema id="10" name="performance_schema" />
+    <schema id="11" name="StudentSystem" />
+    <schema id="12" name="sys" />
+  </database-model>
+</dataSource>
