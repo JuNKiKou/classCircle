@@ -10,6 +10,8 @@ package muggle.constant;/**
  */
 public class Exception {
 
+    public static final String SQL_EXECUTE_EXCEPTION = "SQL操作失败";
+
     public static final String SQL_DRIVER_CAN_NOT_FOUND = "数据库驱动加载失败";
 
     public static final String SQL_OPEN_CONNECTION_FAILED = "连接数据库失败";

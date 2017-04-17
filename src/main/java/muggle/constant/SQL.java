@@ -36,4 +36,6 @@ public class SQL {
 
     public static final String PROCEDURE_GET_ZID = "{call getZId()}";
 
+    public static final String PROCEDURE_LOGIN = "{call login(?,?,?)}";
+
 }
