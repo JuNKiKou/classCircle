@@ -38,4 +38,8 @@ public class SQL {
 
     public static final String PROCEDURE_LOGIN = "{call login(?,?,?)}";
 
+    public static final String PROCEDURE_REGISTER_TEACHER = "{call registerTeacher(?,?,?,?,?,?,?,?,?)}";
+
+    public static final String PROCEDURE_REGISTER_PARENT = "{call registerParent(?,?,?,?,?,?,?)}";
+
 }

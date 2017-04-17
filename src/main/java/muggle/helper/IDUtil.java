@@ -2,6 +2,13 @@ package muggle.helper;/**
  * Created by JuN on 2017/4/16.
  */
 
+import muggle.constant.Exception;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * 生成规范的ID 工具类
  *
@@ -10,21 +17,74 @@ package muggle.helper;/**
  */
 public class IDUtil {
 
-    public static String getNextIdTo16(String pastId,String header){
+    public static String getId(Connection connection,String sql,String header,int type){
+        String id = null;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.execute();
+            ResultSet set = statement.getResultSet();
+            while (set != null && set.next()){
+                id = set.getString(1);
+            }
+            set.close();
+            statement.close();
+        } catch (SQLException e) {
+            Out.print(Exception.SQL_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }
+
+        if (type == 16){
+            //16位
+            id = getNextIdTo16(id,header);
+        }else if (type == 8){
+            //8位
+            id = getNextIdTo8(id,header);
+        }
+
+        return id;
+
+    }
+
+    public static int getId(Connection connection,String sql){
+        int id = 0;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.execute();
+            ResultSet set = statement.getResultSet();
+            while (set != null && set.next()){
+                id = set.getInt(1);
+            }
+            set.close();
+            statement.close();
+        } catch (SQLException e) {
+            Out.print(Exception.SQL_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }
+
+        id = getNextIdInt(id);
+        return id;
+
+    }
+
+
+
+
+
+
+
+    private static String getNextIdTo16(String pastId,String header){
         int num = add(pastId,header);
         return format(header,num,16);
     }
 
-    public static String getNextIdTo8(String pastId,String header){
+    private static String getNextIdTo8(String pastId,String header){
         int num = add(pastId,header);
         return format(pastId,num,8);
     }
 
-    public static int getNextIdInt(int pastId){
+    private static int getNextIdInt(int pastId){
         return add(pastId);
     }
-
-
 
     private static int add(String pastId,String header){
         int headerLength = header.length();

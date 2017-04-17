@@ -12,7 +12,7 @@ public class Teacher {
     //姓名
     private String name;
     //性别
-    private Boolean sex;
+    private boolean sex;
     //学科
     private int subject;
     //电话
@@ -20,9 +20,9 @@ public class Teacher {
     //密码
     private String password;
     //是否是班主任
-    private String is_leader;
+    private boolean is_leader;
 
-    public Teacher(String name, Boolean sex, int subject, String phone, String password, String is_leader) {
+    public Teacher(String name, Boolean sex, int subject, String phone, String password, boolean is_leader) {
         this.name = name;
         this.sex = sex;
         this.subject = subject;
@@ -71,11 +71,11 @@ public class Teacher {
         this.password = password;
     }
 
-    public String getIs_leader() {
+    public boolean getIs_leader() {
         return is_leader;
     }
 
-    public void setIs_leader(String is_leader) {
+    public void setIs_leader(boolean is_leader) {
         this.is_leader = is_leader;
     }
 }

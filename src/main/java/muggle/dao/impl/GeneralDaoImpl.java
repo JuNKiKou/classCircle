@@ -9,10 +9,8 @@ import muggle.constant.JSONKey;
 import muggle.constant.JSONValue;
 import muggle.constant.SQL;
 import muggle.dao.IGeneralDao;
-import muggle.dao.unit.DBUnit;
 import muggle.helper.Out;
 import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
@@ -22,15 +20,13 @@ import java.sql.*;
  * @create2017-04-16 12:30
  */
 @Repository
-public class IGeneralDaoImpl implements IGeneralDao {
+public class GeneralDaoImpl extends BaseDaoImpl implements IGeneralDao {
 
-    @Autowired
-    private DBUnit unit;
 
     public String login(String phone, String password) {
         JSONObject result = new JSONObject();
         int resultCode = JSONValue.get(JSONValue.SUCCESS);
-        Connection connection = unit.getConnection();
+        Connection connection = getUnit().getConnection();
         String sql = SQL.PROCEDURE_LOGIN;
         try {
             CallableStatement statement = connection.prepareCall(sql);
@@ -92,25 +88,11 @@ public class IGeneralDaoImpl implements IGeneralDao {
             resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
             e.printStackTrace();
         }finally {
-            if (connection != null){
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+            getUnit().closeConnection(connection);
         }
 
-        result.put(JSONKey.RESULTCODE,resultCode);
+        result.put(JSONKey.RESULT_CODE,resultCode);
         return result.toString();
-    }
-
-    public String registerTeacher(Teacher teacher) {
-        return null;
-    }
-
-    public String registerParent(Parent parent, String studentId) {
-        return null;
     }
 
     private String cutNull(String str){

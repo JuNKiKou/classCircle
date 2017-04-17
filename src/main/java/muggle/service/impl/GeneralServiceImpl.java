@@ -16,20 +16,12 @@ import org.springframework.stereotype.Service;
  * @create2017-04-17 11:16
  */
 @Service
-public class GeneralService implements IGeneralService{
+public class GeneralServiceImpl implements IGeneralService{
 
     @Autowired
     private IGeneralDao dao;
 
     public String login(String phone, String password) {
         return dao.login(phone,password);
-    }
-
-    public String registerTeacher(Teacher teacher) {
-        return null;
-    }
-
-    public String registerParent(Parent parent, String studentId) {
-        return null;
     }
 }

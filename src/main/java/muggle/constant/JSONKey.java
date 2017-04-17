@@ -10,6 +10,7 @@ package muggle.constant;/**
  */
 public class JSONKey {
 
-    public static final String RESULTCODE = "resultCode";
+    public static final String RESULT_CODE = "resultCode";
 
+    public static final String USER_ID = "user";
 }

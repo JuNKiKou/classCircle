@@ -12,7 +12,7 @@ public class Parent {
 
     private String name;
 
-    private Boolean sex;
+    private boolean sex;
 
     private String phone;
 
@@ -33,7 +33,7 @@ public class Parent {
         this.name = name;
     }
 
-    public Boolean getSex() {
+    public boolean getSex() {
         return sex;
     }
 

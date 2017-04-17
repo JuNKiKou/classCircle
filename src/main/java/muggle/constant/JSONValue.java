@@ -25,6 +25,8 @@ public class JSONValue {
 
     public static final String SQL_LOGIN_PARENT_SUCCESS = "家长登录成功";
 
+    public static final String SQL_REGISTER_USER_EXISTS = "用户已存在";
+
     private static Map<String,Integer> instance = new HashMap<String, Integer>();
 
 
@@ -35,6 +37,7 @@ public class JSONValue {
         instance.put(SQL_LOGIN_PWD_ERROR,202);
         instance.put(SQL_LOGIN_TEACHER_SUCCESS,203);
         instance.put(SQL_LOGIN_PARENT_SUCCESS,204);
+        instance.put(SQL_REGISTER_USER_EXISTS,205);
         instance.put(SUCCESS,500);
     }
 
