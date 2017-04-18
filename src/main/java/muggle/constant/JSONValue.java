@@ -27,6 +27,10 @@ public class JSONValue {
 
     public static final String SQL_REGISTER_USER_EXISTS = "用户已存在";
 
+    public static final String SQL_REGISTER_BIND_ERROR = "绑定失败";
+
+    public static final String SQL_MODIFY_CLASS_ERROR = "修改班级信息失败";
+
     private static Map<String,Integer> instance = new HashMap<String, Integer>();
 
 
@@ -38,6 +42,8 @@ public class JSONValue {
         instance.put(SQL_LOGIN_TEACHER_SUCCESS,203);
         instance.put(SQL_LOGIN_PARENT_SUCCESS,204);
         instance.put(SQL_REGISTER_USER_EXISTS,205);
+        instance.put(SQL_REGISTER_BIND_ERROR,206);
+        instance.put(SQL_MODIFY_CLASS_ERROR,207);
         instance.put(SUCCESS,500);
     }
 

@@ -2,6 +2,8 @@ package muggle.service.impl;/**
  * Created by JuN on 2017/4/17.
  */
 
+import entity.params.Class;
+import entity.params.Parent;
 import entity.params.Teacher;
 import muggle.dao.IWebDao;
 import muggle.service.IWebService;
@@ -24,6 +26,12 @@ public class WebServiceImpl implements IWebService{
     }
 
     public String registerParent(String name, boolean sex, String phone, String password, String studentId) {
-        return null;
+        Parent parent = new Parent(name,sex,phone,password);
+        return dao.registerParent(parent,studentId);
+    }
+
+    public String addClass(String name, String school, String description, String leader) {
+        Class c = new Class(name,school,description);
+        return dao.addClass(c,leader);
     }
 }

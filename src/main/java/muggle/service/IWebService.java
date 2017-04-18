@@ -10,5 +10,5 @@ public interface IWebService {
 
     public abstract String registerParent(String name,boolean sex,String phone,String password, String studentId);
 
-
+    public abstract String addClass(String name,String school,String description,String leader);
 }

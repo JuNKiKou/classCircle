@@ -24,7 +24,7 @@ public class WebController {
     private IWebService service;
 
     @ResponseBody
-    @RequestMapping(value = "/register",produces = "text/html;charset=UTF-8",method = RequestMethod.POST)
+    @RequestMapping(value = "/registerTeacher",produces = "text/html;charset=UTF-8",method = RequestMethod.POST)
     public String register(
             @RequestParam(value = "name") String name,
             @RequestParam(value = "sex") boolean sex,
@@ -34,6 +34,29 @@ public class WebController {
             @RequestParam(value = "leader") boolean leader)
     {
         return service.registerTeacher(name,sex,subject,phone,password,leader);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/registerParent",produces = "text/html;charset=UTF-8",method = RequestMethod.POST)
+    public String register(
+            @RequestParam(value = "name") String name,
+            @RequestParam(value = "sex") boolean sex,
+            @RequestParam(value = "telephone") String phone,
+            @RequestParam(value = "password") String password,
+            @RequestParam(value = "student") String studentId)
+    {
+        return service.registerParent(name,sex,phone,password,studentId);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "addClass",produces = "text/html;charset=UTF-8",method = RequestMethod.POST)
+    public String addClass(
+            @RequestParam(value = "name") String name,
+            @RequestParam(value = "school") String school,
+            @RequestParam(value = "description") String description,
+            @RequestParam(value = "leader") String leader)
+    {
+        return service.addClass(name,school,description,leader);
     }
 
 }

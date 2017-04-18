@@ -13,4 +13,6 @@ public class JSONKey {
     public static final String RESULT_CODE = "resultCode";
 
     public static final String USER_ID = "user";
+
+    public static final String CLASS_ID = "class";
 }
