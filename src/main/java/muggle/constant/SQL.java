@@ -61,5 +61,8 @@ public class SQL {
 
     public static final String PROCEDURE_MODIFY_BIND_STUDENT = "{call modifyBindStudent(?,?,?)}";
 
+    public static final String PROCEDURE_SEND_MESSAGE = "{call sendMessage(?,?,?,?,?)}";
+
+    public static final String PROCEDURE_DELETE_MESSAGE = "{call deleteMessage(?,?)}";
 
 }

@@ -20,4 +20,10 @@ public class JSONKey {
 
     public static final String FILE_PATH = "file";
 
+    public static final String AUDIO_PATH = "audio";
+
+    public static final String RADIO_PATH = "radio";
+
+    public static final String PHOTO_PATH = "pictures";
+
 }

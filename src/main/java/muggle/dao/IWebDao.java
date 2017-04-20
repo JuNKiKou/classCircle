@@ -4,6 +4,8 @@ import entity.params.Class;
 import entity.params.Parent;
 import entity.params.Teacher;
 
+import java.lang.ref.SoftReference;
+
 /**
  * web端的数据库事务
  * Created by JuN on 2017/4/17.
@@ -32,5 +34,7 @@ public interface IWebDao {
     public abstract String studentBindClass(String studentId,String classId);
 
     public abstract String modifyUser(String userId,String param,int type);
+
+
 
 }

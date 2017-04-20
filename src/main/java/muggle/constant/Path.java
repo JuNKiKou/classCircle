@@ -16,8 +16,17 @@ public class Path {
 
     public static String USER_INDEX_SAVE_DIR;
 
+    public static String MESSAGE_AUDIO_SAVE_DIR;
+
+    public static String MESSAGE_RADIO_SAVE_DIR;
+
+    public static String MESSAGE_PHOTO_SAVE_DIR;
+
     static {
-        USER_HEADER_SAVE_DIR = System.getProperty("root") + "/header/";
-        USER_INDEX_SAVE_DIR = System.getProperty("root") + "/index/";
+        USER_HEADER_SAVE_DIR = System.getProperty("root") + "header/";
+        USER_INDEX_SAVE_DIR = System.getProperty("root") + "index/";
+        MESSAGE_AUDIO_SAVE_DIR = System.getProperty("root") + "audio/";
+        MESSAGE_RADIO_SAVE_DIR = System.getProperty("root") + "radio/";
+        MESSAGE_PHOTO_SAVE_DIR = System.getProperty("root") + "photo/";
     }
 }

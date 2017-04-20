@@ -41,6 +41,10 @@ public class JSONValue {
 
     public static final String FILE_UPLOAD_ERROR = "文件上传失败";
 
+    public static final String SEND_MESSAGE_ERROR = "推送消息错误";
+
+    public static final String DELETE_MESSAGE_ERROR = "删除消息出错";
+
     private static Map<String,Integer> instance = new HashMap<String, Integer>();
 
 
@@ -59,6 +63,8 @@ public class JSONValue {
         instance.put(SQL_MODIFY_STUDENT_ERROR,210);
         instance.put(SQL_CUT_STUDENT_ERROR,211);
         instance.put(FILE_UPLOAD_ERROR,301);
+        instance.put(SEND_MESSAGE_ERROR,401);
+        instance.put(DELETE_MESSAGE_ERROR,402);
         instance.put(SUCCESS,500);
     }
 
