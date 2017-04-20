@@ -8,7 +8,6 @@ import entity.params.Teacher;
 import muggle.constant.*;
 import muggle.constant.Exception;
 import muggle.dao.IWebDao;
-import muggle.helper.IDUtil;
 import muggle.helper.Out;
 import org.json.JSONObject;
 import org.springframework.stereotype.Repository;
@@ -151,6 +150,8 @@ public class WebDaoImpl extends BaseDaoImpl implements IWebDao{
                     result.put(JSONKey.CLASS_ID,set.getString(1));
                 }
                 set.close();
+            }else if (code == -1){
+                resultCode = JSONValue.get(JSONValue.SQL_ADD_CLASS_EXISTS);
             }
             statement.close();
         } catch (SQLException e) {
@@ -165,53 +166,241 @@ public class WebDaoImpl extends BaseDaoImpl implements IWebDao{
         return result.toString();
     }
 
-//    public String modifyClass(String classId, String param, int type) {
-//        String[] sqls = {
-//                SQL.PROCEDURE_MODIFY_SCHOOL,
-//                SQL.PROCEDURE_MODIFY_CLASS_NAME,
-//                SQL.PROCEDURE_MODIFY_DESCRIPTION,
-//                SQL.PROCEDURE_SET_LEADER
-//        };
-//        boolean flag = (type == 3) ? true : false;
-//
-//        return modify(classId,param,sqls[type],flag);
-//    }
-//
-//    private String modify(String classId,String param,String sql,boolean flag){
-//        JSONObject result = new JSONObject();
-//        Connection connection = getUnit().getConnection();
-//        int resultCode = JSONValue.get(JSONValue.SUCCESS);
-//        int tcId = 0;
-//        if (flag){
-//            //获取教师班级关系表的编号
-//            String sqlStr = SQL.PROCEDURE_GET_TCID;
-//            tcId = IDUtil.getId(connection,sqlStr);
-//        }
-//
-//        try {
-//            CallableStatement statement = connection.prepareCall(sql);
-//            statement.setString(1,classId);
-//            statement.setString(2,param);
-//            if (flag){
-//                statement.setInt(3,tcId);
-//                statement.registerOutParameter(4,Types.INTEGER);
-//            }else {
-//                statement.registerOutParameter(3,Types.INTEGER);
-//            }
-//            statement.execute();
-//            int code = statement.getInt(flag ? 4 : 3);
-//            if (code != 1){
-//                resultCode = JSONValue.get(JSONValue.SQL_MODIFY_CLASS_ERROR);
-//            }
-//        } catch (SQLException e) {
-//            Out.print(Exception.SQL_EXECUTE_EXCEPTION);
-//            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
-//            e.printStackTrace();
-//        }finally {
-//            getUnit().closeConnection(connection);
-//        }
-//        result.put(JSONKey.RESULT_CODE,resultCode);
-//        return result.toString();
-//    }
+    public String modifyClass(String classId, String param, int type) {
+        String[] sqls = {
+                SQL.PROCEDURE_MODIFY_SCHOOL,
+                SQL.PROCEDURE_MODIFY_CLASS_NAME,
+                SQL.PROCEDURE_MODIFY_DESCRIPTION,
+                SQL.PROCEDURE_SET_LEADER
+        };
 
+        return modify(classId,param,sqls[type]);
+    }
+
+    public String deleteClass(String classId) {
+        JSONObject result = new JSONObject();
+        Connection connection = getUnit().getConnection();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        String sql = SQL.PROCEDURE_DELETE_CLASS;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,classId);
+            statement.registerOutParameter(2,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(2);
+            if (code != 1){
+                resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+
+        return result.toString();
+    }
+
+    public String unbindLeader(String classId) {
+        JSONObject result = new JSONObject();
+        Connection connection = getUnit().getConnection();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        String sql = SQL.PROCEDURE_UNBIND_LEADER;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,classId);
+            statement.registerOutParameter(2,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(2);
+            if (code != 1){
+                resultCode = JSONValue.get(JSONValue.SQL_UNBIND_LEADER_EXCEPTION);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        return result.toString();
+    }
+
+    public String addStudent(String name, boolean sex, String classId) {
+        JSONObject result = new JSONObject();
+        Connection connection = getUnit().getConnection();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        String sql = SQL.PROCEDURE_ADD_STUDENT;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,name);
+            statement.setBoolean(2,sex);
+            statement.setString(3,classId);
+            statement.registerOutParameter(4,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(4);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    result.put(JSONKey.STUDENT_ID,set.getString(1));
+                }
+                set.close();
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        return result.toString();
+    }
+
+    public String modifyStudent(String studentId, String param, int type) {
+        String[] sqls = {
+            SQL.PROCEDURE_MODIFY_STUDENT_NAME,
+            SQL.PROCEDURE_MODIFY_STUDENT_SEX,
+            SQL.PROCEDURE_MODIFY_STUDENT_CLASS
+        };
+        int flag = (type == 1) ? 1 : 0;
+        return modify(studentId,param,sqls[type],flag);
+    }
+
+    public String cutStudent(String studentId) {
+        JSONObject result = new JSONObject();
+        Connection connection = getUnit().getConnection();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        String sql = SQL.PROCEDURE_CUT_STUDENT;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,studentId);
+            statement.registerOutParameter(2,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(2);
+            if (code != 1){
+                resultCode = JSONValue.get(JSONValue.SQL_CUT_STUDENT_ERROR);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        return result.toString();
+    }
+
+    public String studentBindClass(String studentId, String classId) {
+        JSONObject result = new JSONObject();
+        Connection connection = getUnit().getConnection();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        String sql = SQL.PROCEDURE_STUDENT_BIND_CLASS;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,studentId);
+            statement.setString(2,classId);
+            statement.registerOutParameter(3,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(3);
+            if (code != 1){
+                resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        } finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        return result.toString();
+    }
+
+    public String modifyUser(String userId, String param, int type) {
+        String[] sqls = {
+            SQL.PROCEDURE_MODIFY_USER_NAME,
+            SQL.PROCEDURE_MODIFY_USER_SEX,
+            SQL.PROCEDURE_MODIFY_USER_HEADER,
+            SQL.PROCEDURE_MODIFY_USER_INDEX,
+            SQL.PROCEDURE_MODIFY_PASSWORD,
+            SQL.PROCEDURE_MODIFY_SUBJECT,
+            SQL.PROCEDURE_MODIFY_BIND_STUDENT
+        };
+        int flag;
+        switch (type){
+            case 1:
+                flag = 1;
+                break;
+            case 5:
+                flag = 2;
+                break;
+            default:
+                flag = 0;
+                break;
+        }
+        return modify(userId,param,sqls[type],flag);
+    }
+
+    private String modify(String classId, String param, String sql){
+        JSONObject result = new JSONObject();
+        Connection connection = getUnit().getConnection();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,classId);
+            statement.setString(2,param);
+            statement.registerOutParameter(3,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(3);
+            if (code != 1){
+                resultCode = JSONValue.get(JSONValue.SQL_MODIFY_CLASS_ERROR);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            Out.print(Exception.SQL_EXECUTE_EXCEPTION);
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        return result.toString();
+    }
+
+    private String modify(String id,String param,String sql,int flag){
+        JSONObject result = new JSONObject();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        Connection connection = getUnit().getConnection();
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,id);
+            if (flag == 1){
+                statement.setBoolean(2,Boolean.parseBoolean(param));
+            }else if (flag == 0){
+                statement.setString(2,param);
+            }else if (flag == 2){
+                statement.setInt(2,Integer.parseInt(param));
+            }
+            statement.registerOutParameter(3,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(3);
+            if (code != 1){
+                resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }finally {
+            getUnit().closeConnection(connection);
+        }
+
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        return result.toString();
+    }
 }

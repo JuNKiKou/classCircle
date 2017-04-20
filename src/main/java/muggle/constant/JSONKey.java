@@ -15,4 +15,9 @@ public class JSONKey {
     public static final String USER_ID = "user";
 
     public static final String CLASS_ID = "class";
+
+    public static final String STUDENT_ID = "student";
+
+    public static final String FILE_PATH = "file";
+
 }

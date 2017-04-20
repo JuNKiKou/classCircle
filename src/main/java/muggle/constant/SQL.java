@@ -29,6 +29,37 @@ public class SQL {
 
     public static final String PROCEDURE_MODIFY_DESCRIPTION = "{call modifyDescription(?,?,?)}";
 
-    public static final String PROCEDURE_SET_LEADER = "{call setLeader(?,?,?,?)}";
+    public static final String PROCEDURE_SET_LEADER = "{call setLeader(?,?,?)}";
+
+    public static final String PROCEDURE_DELETE_CLASS = "{call deleteClass(?,?)}";
+
+    public static final String PROCEDURE_UNBIND_LEADER = "{call unbindLeader(?,?)}";
+
+    public static final String PROCEDURE_ADD_STUDENT = "{call addStudent(?,?,?,?)}";
+
+    public static final String PROCEDURE_MODIFY_STUDENT_NAME = "{call modifyStudentName(?,?,?)}";
+
+    public static final String PROCEDURE_MODIFY_STUDENT_SEX = "{call modifyStudentSex(?,?,?)}";
+
+    public static final String PROCEDURE_MODIFY_STUDENT_CLASS = "{call modifyStudentClass(?,?,?)}";
+
+    public static final String PROCEDURE_CUT_STUDENT = "{call cutStudent(?,?)}";
+
+    public static final String PROCEDURE_STUDENT_BIND_CLASS = "{call studentBindClass(?,?,?)}";
+
+    public static final String PROCEDURE_MODIFY_PASSWORD = "{call modifyPassword(?,?,?)}";
+
+    public static final String PROCEDURE_MODIFY_USER_NAME = "{call modifyUserName(?,?,?)}";
+
+    public static final String PROCEDURE_MODIFY_USER_SEX = "{call modifyUserSex(?,?,?)}";
+
+    public static final String PROCEDURE_MODIFY_USER_HEADER = "{call modifyUserHeader(?,?,?)}";
+
+    public static final String PROCEDURE_MODIFY_USER_INDEX = "{call modifyUserIndex(?,?,?)}";
+
+    public static final String PROCEDURE_MODIFY_SUBJECT = "{call modifySubject(?,?,?)}";
+
+    public static final String PROCEDURE_MODIFY_BIND_STUDENT = "{call modifyBindStudent(?,?,?)}";
+
 
 }

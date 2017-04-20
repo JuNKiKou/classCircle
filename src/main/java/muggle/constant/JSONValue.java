@@ -29,7 +29,17 @@ public class JSONValue {
 
     public static final String SQL_REGISTER_BIND_ERROR = "绑定失败";
 
+    public static final String SQL_ADD_CLASS_EXISTS = "该班级已存在";
+
     public static final String SQL_MODIFY_CLASS_ERROR = "修改班级信息失败";
+
+    public static final String SQL_UNBIND_LEADER_EXCEPTION = "解除班主任是失败";
+
+    public static final String SQL_MODIFY_STUDENT_ERROR = "修改学生信息出错";
+
+    public static final String SQL_CUT_STUDENT_ERROR = "踢出学生出错";
+
+    public static final String FILE_UPLOAD_ERROR = "文件上传失败";
 
     private static Map<String,Integer> instance = new HashMap<String, Integer>();
 
@@ -44,6 +54,11 @@ public class JSONValue {
         instance.put(SQL_REGISTER_USER_EXISTS,205);
         instance.put(SQL_REGISTER_BIND_ERROR,206);
         instance.put(SQL_MODIFY_CLASS_ERROR,207);
+        instance.put(SQL_ADD_CLASS_EXISTS,208);
+        instance.put(SQL_UNBIND_LEADER_EXCEPTION,209);
+        instance.put(SQL_MODIFY_STUDENT_ERROR,210);
+        instance.put(SQL_CUT_STUDENT_ERROR,211);
+        instance.put(FILE_UPLOAD_ERROR,301);
         instance.put(SUCCESS,500);
     }
 
