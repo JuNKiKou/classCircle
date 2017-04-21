@@ -90,4 +90,8 @@ public class WebServiceImpl implements IWebService{
         }
         return result;
     }
+
+    public String searchClass(String keyword) {
+        return dao.searchClass(keyword);
+    }
 }

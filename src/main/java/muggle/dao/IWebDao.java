@@ -35,6 +35,6 @@ public interface IWebDao {
 
     public abstract String modifyUser(String userId,String param,int type);
 
-
+    public abstract String searchClass(String keyword);
 
 }

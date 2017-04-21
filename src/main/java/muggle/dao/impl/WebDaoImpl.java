@@ -9,8 +9,10 @@ import muggle.constant.*;
 import muggle.constant.Exception;
 import muggle.dao.IWebDao;
 import muggle.helper.Out;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.sql.*;
 
@@ -345,6 +347,44 @@ public class WebDaoImpl extends BaseDaoImpl implements IWebDao{
         return modify(userId,param,sqls[type],flag);
     }
 
+    public String searchClass(String keyword) {
+        JSONObject result = new JSONObject();
+        JSONArray array = new JSONArray();
+        Connection connection = getUnit().getConnection();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        String sql = SQL.PROCEDURE_SEARCH_CLASS;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,keyword);
+            statement.registerOutParameter(2,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(2);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    JSONObject item = new JSONObject();
+                    item.put(JSONKey.CLASS_ID,set.getString(1));
+                    item.put(JSONKey.CLASS_NAME,set.getString(2));
+                    item.put(JSONKey.CLASS_DESCRIPTION,set.getString(3));
+                    array.put(item);
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.SEARCH_CLASS_ERROR);
+            }
+
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        } finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        result.put(JSONKey.CLASSES,array);
+        return result.toString();
+    }
+
     private String modify(String classId, String param, String sql){
         JSONObject result = new JSONObject();
         Connection connection = getUnit().getConnection();
@@ -403,4 +443,6 @@ public class WebDaoImpl extends BaseDaoImpl implements IWebDao{
         result.put(JSONKey.RESULT_CODE,resultCode);
         return result.toString();
     }
+
+
 }

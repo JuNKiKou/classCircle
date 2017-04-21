@@ -45,6 +45,18 @@ public class JSONValue {
 
     public static final String DELETE_MESSAGE_ERROR = "删除消息出错";
 
+    public static final String GIVE_Z_ERROR = "点赞失败";
+
+    public static final String MODIFY_Z_ERROR = "改赞失败";
+
+    public static final String COMMENT_ERROR = "评论失败";
+
+    public static final String REPLY_ERROR = "回复失败";
+
+    public static final String SEARCH_CLASS_ERROR = "查询班级失败";
+
+    public static final String LOAD_MESSAGE_ERROR = "获取消息失败";
+
     private static Map<String,Integer> instance = new HashMap<String, Integer>();
 
 
@@ -65,7 +77,12 @@ public class JSONValue {
         instance.put(FILE_UPLOAD_ERROR,301);
         instance.put(SEND_MESSAGE_ERROR,401);
         instance.put(DELETE_MESSAGE_ERROR,402);
+        instance.put(GIVE_Z_ERROR,403);
+        instance.put(MODIFY_Z_ERROR,404);
+        instance.put(REPLY_ERROR,405);
         instance.put(SUCCESS,500);
+        instance.put(SEARCH_CLASS_ERROR,501);
+        instance.put(LOAD_MESSAGE_ERROR,502);
     }
 
 

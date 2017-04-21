@@ -44,4 +44,53 @@ public class AppController {
         return service.deleteMessage(message);
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/give",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    public String give(
+            @RequestParam(value = "user") String user,
+            @RequestParam(value = "message") String message)
+    {
+        return service.giveZ(user,message);
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/modifyZ",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    public String modifyZ(
+            @RequestParam(value = "user") String user,
+            @RequestParam(value = "message") String message)
+    {
+        return service.modifyZ(user,message);
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/comment",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    public String comment(
+            @RequestParam(value = "user") String user,
+            @RequestParam(value = "message") String message,
+            @RequestParam(value = "content") String content)
+    {
+        return service.comment(user,message,content);
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/reply",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    public String reply(
+            @RequestParam(value = "comment") String comment,
+            @RequestParam(value = "content") String content)
+    {
+        return service.reply(comment,content);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/loadMessages",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+    public String loadMessages(
+            @RequestParam(value = "class") String classId,
+            @RequestParam(value = "counts") int counts)
+    {
+        return service.loadMessages(classId,counts);
+    }
+
 }

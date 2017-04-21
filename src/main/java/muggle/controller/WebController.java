@@ -144,4 +144,10 @@ public class WebController {
     {
         return service.modifyUserInfo(user,type,file);
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/searchClass",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+    public String search(@RequestParam(value = "keyword") String keyword){
+        return service.searchClass(keyword);
+    }
 }

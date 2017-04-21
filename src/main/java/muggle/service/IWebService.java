@@ -31,4 +31,6 @@ public interface IWebService {
     public abstract String modifyUserInfo(String user,String param,int type);
 
     public abstract String modifyUserInfo(String user, int type, MultipartFile file);
+
+    public abstract String searchClass(String keyword);
 }

@@ -26,4 +26,12 @@ public class JSONKey {
 
     public static final String PHOTO_PATH = "pictures";
 
+    public static final String CLASSES = "classes";
+
+    public static final String CLASS_NAME = "name";
+
+    public static final String CLASS_DESCRIPTION = "description";
+
+    public static final String MESSAGES = "messages";
+
 }

@@ -65,4 +65,19 @@ public class SQL {
 
     public static final String PROCEDURE_DELETE_MESSAGE = "{call deleteMessage(?,?)}";
 
+    public static final String PROCEDURE_GIVE_Z = "{call giveZ(?,?,?)}";
+
+    public static final String PROCEDURE_MODIFY_Z = "{call modifyZ(?,?,?)}";
+
+    public static final String PROCEDURE_COMMENT = "{call comment(?,?,?,?)}";
+
+    public static final String PROCEDURE_REPLY = "{call reply(?,?,?)}";
+
+    public static final String PROCEDURE_SEARCH_CLASS = "{call searchClass(?,?)}";
+
+    public static final String PROCEDURE_LOAD_Z = "{call loadZ(?,?,?)}";
+
+    public static final String PROCEDURE_LOAD_COMMENT = "{call loadComment(?,?,?)}";
+
+    public static final String PROCEDURE_LOAD_MESSAGE = "{call loadMessage(?,?,?)}";
 }

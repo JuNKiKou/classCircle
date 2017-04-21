@@ -92,6 +92,26 @@ public class AppServiceImpl implements IAppService{
         return dao.deleteMessage(message);
     }
 
+    public String giveZ(String user, String message) {
+        return dao.giveZ(user,message);
+    }
+
+    public String modifyZ(String user, String message) {
+        return dao.modifyZ(user,message);
+    }
+
+    public String comment(String user, String message, String content) {
+        return dao.comment(user,message,content);
+    }
+
+    public String reply(String comment, String content) {
+        return dao.reply(comment,content);
+    }
+
+    public String loadMessages(String classId, int counts) {
+        return dao.loadMessages(classId,counts);
+    }
+
     private String dealMedia(MultipartFile file, String path){
         String str = null;
         String result = LoadHelper.uploadFile(file, path);
