@@ -112,6 +112,10 @@ public class AppServiceImpl implements IAppService{
         return dao.loadMessages(classId,counts);
     }
 
+    public String loadMessage(String message) {
+        return dao.loadMessage(message);
+    }
+
     private String dealMedia(MultipartFile file, String path){
         String str = null;
         String result = LoadHelper.uploadFile(file, path);

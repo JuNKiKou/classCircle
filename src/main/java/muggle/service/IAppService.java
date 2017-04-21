@@ -20,5 +20,7 @@ public interface IAppService {
     public abstract String reply(String comment,String content);
 
     public abstract String loadMessages(String classId,int counts);
+
+    public abstract String loadMessage(String message);
 }
 

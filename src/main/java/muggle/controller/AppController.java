@@ -93,4 +93,10 @@ public class AppController {
         return service.loadMessages(classId,counts);
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/loadMessage",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+    public String loadMessage(@RequestParam(value = "message") String message){
+        return service.loadMessage(message);
+    }
+
 }

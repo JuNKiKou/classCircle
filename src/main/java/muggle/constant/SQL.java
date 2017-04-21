@@ -80,4 +80,6 @@ public class SQL {
     public static final String PROCEDURE_LOAD_COMMENT = "{call loadComment(?,?,?)}";
 
     public static final String PROCEDURE_LOAD_MESSAGE = "{call loadMessage(?,?,?)}";
+
+    public static final String PROCEDURE_LOAD_DETAILS = "{call loadDetails(?,?)}";
 }

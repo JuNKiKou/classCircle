@@ -263,95 +263,15 @@ public class AppDaoImpl extends BaseDaoImpl implements IAppDao{
 
 
         //获取评论和回复
-        sql = SQL.PROCEDURE_LOAD_COMMENT;
         for (Message message : messages){
-            List<Comment> cs = new ArrayList<Comment>();
-            try {
-                CallableStatement statement = connection.prepareCall(sql);
-                statement.setString(1,message.getId());
-                statement.setBoolean(2,false);
-                statement.registerOutParameter(3,Types.INTEGER);
-                statement.execute();
-                int code = statement.getInt(3);
-                if (code == 2){
-                    message.setComment_more(true);
-                }
-                if (code == 1 || code == 2){
-                    ResultSet set = statement.getResultSet();
-                    while (set != null && set.next()){
-                        Reply reply = new Reply(
-                                set.getString(8),
-                                set.getString(9),
-                                set.getString(10)
-                        );
-                        Comment comment = new Comment(
-                                set.getString(1),
-                                set.getString(2),
-                                set.getString(3),
-                                set.getString(4),
-                                set.getInt(5),
-                                set.getString(6),
-                                set.getString(7),
-                                reply,
-                                set.getString(11),
-                                set.getBoolean(12),
-                                set.getString(13)
-                        );
-                        cs.add(comment);
-                    }
-                    set.close();
-                }else {
-                    resultCode = JSONValue.get(JSONValue.LOAD_MESSAGE_ERROR);
-                }
-                statement.close();
-            } catch (SQLException e) {
-                resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
-                e.printStackTrace();
-            }
-            Comment[] comments = cs.toArray(new Comment[cs.size()]);
-            message.setComments(comments);
+             resultCode = getComments(connection,message,false);
         }
 
 
         //获取赞
-        sql = SQL.PROCEDURE_LOAD_Z;
+
         for (Message message : messages){
-            List<Z> zList = new ArrayList<Z>();
-            try {
-                CallableStatement statement = connection.prepareCall(sql);
-                statement.setString(1,message.getId());
-                statement.setBoolean(2,false);
-                statement.registerOutParameter(3,Types.INTEGER);
-                statement.execute();
-                int code = statement.getInt(3);
-                if (code == 2){
-                    message.setZ_more(true);
-                }
-                if (code == 1 || code == 2){
-                    ResultSet set = statement.getResultSet();
-                    while (set != null && set.next()){
-                        Z z = new Z(
-                                set.getInt(2),
-                                set.getString(1),
-                                set.getString(3),
-                                set.getInt(4),
-                                set.getString(5),
-                                set.getBoolean(6),
-                                set.getString(7)
-                        );
-                        zList.add(z);
-                    }
-                    set.close();
-                }else {
-                    resultCode = JSONValue.get(JSONValue.LOAD_MESSAGE_ERROR);
-                }
-                statement.close();
-            } catch (SQLException e) {
-                resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
-                e.printStackTrace();
-            }
-            Z[] zs = zList.toArray(new Z[zList.size()]);
-            message.setZs(zs);
+            resultCode = getZs(connection,message,false);
         }
 
         getUnit().closeConnection(connection);
@@ -364,7 +284,149 @@ public class AppDaoImpl extends BaseDaoImpl implements IAppDao{
     }
 
     public String loadMessage(String message) {
-        return null;
+        JSONObject result = new JSONObject();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        Connection connection = getUnit().getConnection();
+        String sql = SQL.PROCEDURE_LOAD_DETAILS;
+        Message instance = null;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,message);
+            statement.registerOutParameter(2,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(2);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    instance = new Message(
+                            set.getString(1),
+                            set.getString(2),
+                            set.getString(3),
+                            set.getString(4),
+                            set.getString(5),
+                            set.getString(6),
+                            set.getInt(7),
+                            set.getString(8),
+                            set.getString(9),
+                            set.getString(10),
+                            set.getBoolean(11),
+                            set.getString(12)
+                    );
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.LOAD_MESSAGE_ERROR);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }
+
+
+        resultCode = getComments(connection,instance,true);
+        resultCode = getZs(connection,instance,true);
+
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        result.put(JSONKey.MESSAGE,Message.fixValues(instance));
+
+
+        return result.toString();
+    }
+
+    private int getComments(Connection connection,Message instance,boolean flag){
+        String sql = SQL.PROCEDURE_LOAD_COMMENT;
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        List<Comment> cs = new ArrayList<Comment>();
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,instance.getId());
+            statement.setBoolean(2,flag);
+            statement.registerOutParameter(3,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(3);
+            if (code == 2){
+                instance.setComment_more(true);
+            }
+            if (code == 1 || code == 2){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    Reply reply = new Reply(
+                            set.getString(8),
+                            set.getString(9),
+                            set.getString(10)
+                    );
+                    Comment comment = new Comment(
+                            set.getString(1),
+                            set.getString(2),
+                            set.getString(3),
+                            set.getString(4),
+                            set.getInt(5),
+                            set.getString(6),
+                            set.getString(7),
+                            reply,
+                            set.getString(11),
+                            set.getBoolean(12),
+                            set.getString(13)
+                    );
+                    cs.add(comment);
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.LOAD_MESSAGE_ERROR);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }
+        Comment[] comments = cs.toArray(new Comment[cs.size()]);
+        instance.setComments(comments);
+
+        return resultCode;
+    }
+
+    private int getZs(Connection connection,Message instance,boolean flag){
+        String sql = SQL.PROCEDURE_LOAD_Z;
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        List<Z> zList = new ArrayList<Z>();
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,instance.getId());
+            statement.setBoolean(2,flag);
+            statement.registerOutParameter(3,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(3);
+            if (code == 2){
+                instance.setZ_more(true);
+            }
+            if (code == 1 || code == 2){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    Z z = new Z(
+                            set.getInt(2),
+                            set.getString(1),
+                            set.getString(3),
+                            set.getInt(4),
+                            set.getString(5),
+                            set.getBoolean(6),
+                            set.getString(7)
+                    );
+                    zList.add(z);
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.LOAD_MESSAGE_ERROR);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }
+        Z[] zs = zList.toArray(new Z[zList.size()]);
+        instance.setZs(zs);
+
+        return resultCode;
     }
 }
 
