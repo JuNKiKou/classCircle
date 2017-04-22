@@ -4,6 +4,9 @@ package muggle.dao.impl;/**
 
 import entity.params.Parent;
 import entity.params.Teacher;
+import entity.returns.School;
+import entity.returns.Subject;
+import entity.returns.User;
 import muggle.constant.Exception;
 import muggle.constant.JSONKey;
 import muggle.constant.JSONValue;
@@ -14,6 +17,8 @@ import org.json.JSONObject;
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @authorJuN
@@ -92,6 +97,128 @@ public class GeneralDaoImpl extends BaseDaoImpl implements IGeneralDao {
         }
 
         result.put(JSONKey.RESULT_CODE,resultCode);
+        return result.toString();
+    }
+
+    public String getUserInfo(String user) {
+        JSONObject result = new JSONObject();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        Connection connection = getUnit().getConnection();
+        String sql = SQL.PROCEDURE_GET_USER_INFO;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,user);
+            statement.registerOutParameter(2,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(2);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    User u = new User(
+                            set.getInt(1),
+                            set.getString(2),
+                            set.getBoolean(3),
+                            set.getString(4),
+                            set.getString(5),
+                            set.getBoolean(6),
+                            set.getString(7),
+                            set.getString(8),
+                            set.getString(9),
+                            set.getString(10),
+                            set.getString(11),
+                            set.getString(12),
+                            set.getString(13)
+                    );
+                    result.put(JSONKey.USER_ID,User.fixValues(u));
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        return result.toString();
+    }
+
+    public String getSchools() {
+        JSONObject result = new JSONObject();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        Connection connection = getUnit().getConnection();
+        String sql = SQL.PROCEDURE_GET_SCHOOL;
+        List<School> schoolList = new ArrayList<School>();
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.registerOutParameter(1,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(1);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    School school = new School(
+                            set.getString(1),
+                            set.getString(2),
+                            set.getInt(3),
+                            set.getString(4)
+                    );
+                    schoolList.add(school);
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        School[] schools = schoolList.toArray(new School[schoolList.size()]);
+        result.put(JSONKey.SCHOOLS,School.fixValues(schools));
+        return result.toString();
+    }
+
+    public String getSubjects() {
+        JSONObject result = new JSONObject();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        Connection connection = getUnit().getConnection();
+        String sql = SQL.PROCEDURE_GET_SUBJECT;
+        List<Subject> subjectList = new ArrayList<Subject>();
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.registerOutParameter(1,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(1);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    Subject subject = new Subject(
+                            set.getInt(1),
+                            set.getString(2)
+                    );
+                    subjectList.add(subject);
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        Subject[] subjects = subjectList.toArray(new Subject[subjectList.size()]);
+        result.put(JSONKey.SUBJECTS,Subject.fixValues(subjects));
         return result.toString();
     }
 

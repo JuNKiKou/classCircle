@@ -5,6 +5,8 @@ package muggle.dao.impl;/**
 import entity.params.Class;
 import entity.params.Parent;
 import entity.params.Teacher;
+import entity.returns.Student;
+import entity.returns.T;
 import muggle.constant.*;
 import muggle.constant.Exception;
 import muggle.dao.IWebDao;
@@ -15,6 +17,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @authorJuN
@@ -444,5 +448,108 @@ public class WebDaoImpl extends BaseDaoImpl implements IWebDao{
         return result.toString();
     }
 
+    public String getClassInfo(String classId) {
+        JSONObject result = new JSONObject();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        Connection connection = getUnit().getConnection();
+        String sql = SQL.PROCEDURE_GET_CLASS_INFO;
+        entity.returns.Class c = null;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,classId);
+            statement.registerOutParameter(2,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(2);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    c = new entity.returns.Class(
+                            set.getString(1),
+                            set.getString(2),
+                            set.getString(3),
+                            set.getString(4),
+                            set.getString(5)
+                    );
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }
 
+        sql = SQL.PROCEDURE_GET_CLASS_STUDENTS;
+        List<Student> studentList = new ArrayList<Student>();
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,classId);
+            statement.registerOutParameter(2,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(2);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    Student student = new Student(
+                            set.getString(1),
+                            set.getString(2),
+                            set.getBoolean(3)
+                    );
+                    studentList.add(student);
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }
+
+        Student[] students = studentList.toArray(new Student[studentList.size()]);
+        c.setStudents(students);
+
+        sql = SQL.PROCEDURE_GET_CLASS_TEACHERS;
+        List<T> tList = new ArrayList<T>();
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,classId);
+            statement.registerOutParameter(2,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(2);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    T t = new T(
+                            set.getString(1),
+                            set.getString(2),
+                            set.getString(3),
+                            set.getString(4),
+                            set.getString(5),
+                            set.getBoolean(6)
+                    );
+                    tList.add(t);
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        }
+
+        T[] ts = tList.toArray(new T[tList.size()]);
+        c.setTs(ts);
+
+        getUnit().closeConnection(connection);
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        result.put(JSONKey.CLASS_ID, entity.returns.Class.fixValues(c));
+
+        return result.toString();
+    }
 }

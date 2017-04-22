@@ -11,4 +11,10 @@ public interface IGeneralService {
 
     public abstract String login(String phone,String password);
 
+    public abstract String getUserInfo(String user);
+
+    public abstract String getSchools();
+
+    public abstract String getSubjects();
+
 }

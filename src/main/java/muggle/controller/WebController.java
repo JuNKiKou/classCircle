@@ -150,4 +150,14 @@ public class WebController {
     public String search(@RequestParam(value = "keyword") String keyword){
         return service.searchClass(keyword);
     }
+
+
+
+
+    @ResponseBody
+    @RequestMapping(value = "/getClassInfo",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+    public String getClassInfo(@RequestParam(value = "class") String classId){
+        return service.getClassInfo(classId);
+    }
+
 }

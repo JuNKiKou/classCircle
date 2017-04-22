@@ -33,4 +33,6 @@ public interface IWebService {
     public abstract String modifyUserInfo(String user, int type, MultipartFile file);
 
     public abstract String searchClass(String keyword);
+
+    public abstract String getClassInfo(String classId);
 }

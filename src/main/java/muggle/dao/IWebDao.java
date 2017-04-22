@@ -37,4 +37,5 @@ public interface IWebDao {
 
     public abstract String searchClass(String keyword);
 
+    public abstract String getClassInfo(String classId);
 }

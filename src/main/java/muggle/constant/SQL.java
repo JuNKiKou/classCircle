@@ -82,4 +82,16 @@ public class SQL {
     public static final String PROCEDURE_LOAD_MESSAGE = "{call loadMessage(?,?,?)}";
 
     public static final String PROCEDURE_LOAD_DETAILS = "{call loadDetails(?,?)}";
+
+    public static final String PROCEDURE_GET_USER_INFO = "{call getUserInfo(?,?)}";
+
+    public static final String PROCEDURE_GET_CLASS_INFO = "{call getClassInfo(?,?)}";
+
+    public static final String PROCEDURE_GET_CLASS_STUDENTS = "{call getClassStudents(?,?)}";
+
+    public static final String PROCEDURE_GET_CLASS_TEACHERS = "{call getClassTeachers(?,?)}";
+
+    public static final String PROCEDURE_GET_SCHOOL = "{call getSchool(?)}";
+
+    public static final String PROCEDURE_GET_SUBJECT = "{call getSubject(?)}";
 }

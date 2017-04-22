@@ -26,4 +26,24 @@ public class GeneralController {
         return service.login(phone,password);
     }
 
+
+    @ResponseBody
+    @RequestMapping(value = "/getUserInfo",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+    public String getUserInfo(@RequestParam(value = "user") String user){
+        return service.getUserInfo(user);
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/getSchools",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+    public String getSchools(){
+        return service.getSchools();
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/getSubjects",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+    public String getSubjects(){
+        return service.getSubjects();
+    }
+
 }

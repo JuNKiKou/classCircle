@@ -24,4 +24,16 @@ public class GeneralServiceImpl implements IGeneralService{
     public String login(String phone, String password) {
         return dao.login(phone,password);
     }
+
+    public String getUserInfo(String user) {
+        return dao.getUserInfo(user);
+    }
+
+    public String getSchools() {
+        return dao.getSchools();
+    }
+
+    public String getSubjects() {
+        return dao.getSubjects();
+    }
 }
