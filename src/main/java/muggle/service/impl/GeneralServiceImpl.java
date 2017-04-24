@@ -4,8 +4,12 @@ package muggle.service.impl;/**
 
 import entity.params.Parent;
 import entity.params.Teacher;
+import muggle.constant.JSONKey;
+import muggle.constant.JSONValue;
 import muggle.dao.IGeneralDao;
+import muggle.helper.SmsHelper;
 import muggle.service.IGeneralService;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -35,5 +39,10 @@ public class GeneralServiceImpl implements IGeneralService{
 
     public String getSubjects() {
         return dao.getSubjects();
+    }
+
+    public String getSms(String phone) {
+        JSONObject object = SmsHelper.sendSmsMessage(phone);
+        return object.toString();
     }
 }

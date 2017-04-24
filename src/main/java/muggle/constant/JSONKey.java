@@ -40,4 +40,6 @@ public class JSONKey {
 
     public static final String SUBJECTS = "subjects";
 
+    public static final String SMS = "sms";
+
 }

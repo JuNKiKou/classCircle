@@ -17,4 +17,6 @@ public interface IGeneralService {
 
     public abstract String getSubjects();
 
+    public abstract String getSms(String phone);
+
 }

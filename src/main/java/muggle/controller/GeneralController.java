@@ -46,4 +46,9 @@ public class GeneralController {
         return service.getSubjects();
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/getSms",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+    public String getSms(@RequestParam(value = "telephone") String phone){
+        return service.getSms(phone);
+    }
 }
