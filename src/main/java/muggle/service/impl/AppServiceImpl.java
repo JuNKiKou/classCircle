@@ -139,8 +139,39 @@ public class AppServiceImpl implements IAppService{
         return dao.getNotices(classId);
     }
 
+    public String addTalk(String from, String to, MultipartFile file,int type,String content) {
+        String savePath = null;
+        switch (type){
+            case 0:
+                savePath = Path.MESSAGE_AUDIO_SAVE_DIR;
+                break;
+            case 1:
+                savePath = Path.MESSAGE_PHOTO_SAVE_DIR;
+                break;
+            case 2:
+                savePath = Path.MESSAGE_RADIO_SAVE_DIR;
+                break;
+            default:
+                break;
+        }
+        String path = dealMedia(file,savePath);
+
+        return dao.addTalk(from,to,path,content);
+    }
+
+    public String deleteTalk(String talk) {
+        return dao.deleteTalk(talk);
+    }
+
+    public String loadTalks(String user1, String user2, int count) {
+        return dao.loadTalks(user1,user2,count);
+    }
+
     private String dealMedia(MultipartFile file, String path){
-        String str = null;
+        if (path == null || path.equals("")){
+            return "";
+        }
+        String str;
         String result = LoadHelper.uploadFile(file, path);
         JSONObject object = new JSONObject(result);
         int code = object.getInt(JSONKey.RESULT_CODE);

@@ -47,4 +47,8 @@ public class JSONKey {
     public static final String NOTICE = "notice";
 
     public static final String NOTICES = "notices";
+
+    public static final String TALK = "talk";
+
+    public static final String TALKS = "talks";
 }

@@ -105,4 +105,10 @@ public class SQL {
 
     public static final String PROCEDURE_ADD_NOTICE_SIGN = "{call addNoticeSign(?,?,?)}";
 
+    public static final String PROCEDURE_ADD_TALK = "{call addTalk(?,?,?,?,?)}";
+
+    public static final String PROCEDURE_DELETE_TALK = "{call deleteTalk(?,?)}";
+
+    public static final String PROCEDURE_LOAD_TALKS = "{call loadTalks(?,?,?,?)}";
+
 }

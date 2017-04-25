@@ -36,5 +36,11 @@ public interface IAppService {
     public abstract String getNotices(String classId);
 
     public abstract String addNoticeSign(String notice,String user);
+
+    public abstract String addTalk(String from,String to,MultipartFile file,int type,String content);
+
+    public abstract String deleteTalk(String talk);
+
+    public abstract String loadTalks(String user1,String user2,int count);
 }
 

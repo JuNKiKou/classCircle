@@ -504,6 +504,108 @@ public class AppDaoImpl extends BaseDaoImpl implements IAppDao{
         return result.toString();
     }
 
+    public String addTalk(String from, String to, String path, String content) {
+        JSONObject result = new JSONObject();
+        Connection connection = getUnit().getConnection();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        String sql = SQL.PROCEDURE_ADD_TALK;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,from);
+            statement.setString(2,to);
+            statement.setString(3,path);
+            statement.setString(4,content);
+            statement.registerOutParameter(5,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(5);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    result.put(JSONKey.TALK,set.getString(1));
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.TALK_ERROR);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        } finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        return result.toString();
+    }
+
+    public String deleteTalk(String talk) {
+        JSONObject result = new JSONObject();
+        Connection connection = getUnit().getConnection();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        String sql = SQL.PROCEDURE_DELETE_TALK;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,talk);
+            statement.registerOutParameter(2,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(2);
+            if (code != 1){
+                resultCode = JSONValue.get(JSONValue.TALK_ERROR);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        } finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        return result.toString();
+    }
+
+    public String loadTalks(String user1, String user2, int count) {
+        JSONObject result = new JSONObject();
+        Connection connection = getUnit().getConnection();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        String sql = SQL.PROCEDURE_LOAD_TALKS;
+        List<Talk> talkList = new ArrayList<Talk>();
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,user1);
+            statement.setString(2,user2);
+            statement.setInt(3,count);
+            statement.registerOutParameter(4,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(4);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null & set.next()){
+                    Talk talk = new Talk(
+                            set.getString(1),
+                            set.getString(2),
+                            set.getString(3),
+                            set.getString(4),
+                            set.getString(5)
+                    );
+                    talkList.add(talk);
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.TALK_ERROR);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        } finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        Talk[] talks = talkList.toArray(new Talk[talkList.size()]);
+        result.put(JSONKey.TALKS,Talk.fixValues(talks));
+        return result.toString();
+    }
+
     private int getComments(Connection connection, Message instance, boolean flag){
         String sql = SQL.PROCEDURE_LOAD_COMMENT;
         int resultCode = JSONValue.get(JSONValue.SUCCESS);

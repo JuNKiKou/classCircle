@@ -140,4 +140,32 @@ public class AppController {
         return service.addNoticeSign(notice,user);
     }
 
+    @ResponseBody
+    @RequestMapping(value = "/addTalk",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    public String addTalk(
+            @RequestParam(value = "from") String from,
+            @RequestParam(value = "to") String to,
+            @RequestParam(value = "file",required = false) MultipartFile file,
+            @RequestParam(value = "type") int type,
+            @RequestParam(value = "content",required = false) String content)
+    {
+        return service.addTalk(from,to,file,type,content);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/deleteTalk",method = RequestMethod.POST,produces = "text/html")
+    public String deleteTalk(@RequestParam(value = "talk") String talk){
+        return service.deleteTalk(talk);
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/loadTalks",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+    public String loadTalks(
+            @RequestParam(value = "user1") String user1,
+            @RequestParam(value = "user2") String user2,
+            @RequestParam(value = "count") int count
+    ){
+        return service.loadTalks(user1,user2,count);
+    }
 }

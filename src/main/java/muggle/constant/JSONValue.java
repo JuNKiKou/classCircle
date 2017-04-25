@@ -63,6 +63,8 @@ public class JSONValue {
 
     public static final String NOTICE_ERROR = "公告操作失败";
 
+    public static final String TALK_ERROR = "私聊操作失败";
+
     private static Map<String,Integer> instance = new HashMap<String, Integer>();
 
 
@@ -92,6 +94,7 @@ public class JSONValue {
         instance.put(SEND_SMS_ERROR,503);
         instance.put(LOAD_CONTACTS_ERROR,504);
         instance.put(NOTICE_ERROR,505);
+        instance.put(TALK_ERROR,506);
     }
 
 

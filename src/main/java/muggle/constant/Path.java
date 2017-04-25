@@ -22,6 +22,7 @@ public class Path {
 
     public static String MESSAGE_PHOTO_SAVE_DIR;
 
+
     static {
         USER_HEADER_SAVE_DIR = System.getProperty("root") + "header/";
         USER_INDEX_SAVE_DIR = System.getProperty("root") + "index/";

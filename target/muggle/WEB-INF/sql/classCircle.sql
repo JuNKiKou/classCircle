@@ -107,6 +107,67 @@ INSERT INTO `Message` VALUES ('M000000000000001','ABC','U000000000000001','文�
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Notice`
+--
+
+DROP TABLE IF EXISTS `Notice`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Notice` (
+  `n_id` char(16) NOT NULL,
+  `n_user` char(16) NOT NULL,
+  `n_class` char(16) NOT NULL,
+  `n_content` text NOT NULL,
+  `n_time` datetime NOT NULL,
+  PRIMARY KEY (`n_id`),
+  KEY `FK_notice_user` (`n_user`),
+  KEY `FK_notice_class` (`n_class`),
+  CONSTRAINT `FK_notice_class` FOREIGN KEY (`n_class`) REFERENCES `Class` (`c_id`),
+  CONSTRAINT `FK_notice_user` FOREIGN KEY (`n_user`) REFERENCES `User` (`u_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Notice`
+--
+
+LOCK TABLES `Notice` WRITE;
+/*!40000 ALTER TABLE `Notice` DISABLE KEYS */;
+INSERT INTO `Notice` VALUES ('N000000000000001','U000000000000001','C000000000000001','及时交作业','2017-04-25 13:22:17');
+/*!40000 ALTER TABLE `Notice` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `NoticeSign`
+--
+
+DROP TABLE IF EXISTS `NoticeSign`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `NoticeSign` (
+  `id` int(11) NOT NULL,
+  `notice` char(16) NOT NULL,
+  `user` char(16) NOT NULL,
+  `time` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_nc_notice` (`notice`),
+  KEY `FK_nc_user` (`user`),
+  CONSTRAINT `FK_nc_notice` FOREIGN KEY (`notice`) REFERENCES `Notice` (`n_id`),
+  CONSTRAINT `FK_nc_user` FOREIGN KEY (`user`) REFERENCES `User` (`u_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `NoticeSign`
+--
+
+LOCK TABLES `NoticeSign` WRITE;
+/*!40000 ALTER TABLE `NoticeSign` DISABLE KEYS */;
+INSERT INTO `NoticeSign` VALUES (1,'N000000000000001','U000000000000006','2017-04-25 13:41:32');
+/*!40000 ALTER TABLE `NoticeSign` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `PS`
 --
 
@@ -301,6 +362,38 @@ INSERT INTO `TC` VALUES (2,'T000000000000001','C000000000000001'),(3,'T000000000
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Talk`
+--
+
+DROP TABLE IF EXISTS `Talk`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Talk` (
+  `l_id` char(16) NOT NULL,
+  `l_from` char(16) NOT NULL,
+  `l_to` char(16) NOT NULL,
+  `l_path` text,
+  `l_content` text,
+  `l_time` datetime NOT NULL,
+  PRIMARY KEY (`l_id`),
+  KEY `FK_talk_from` (`l_from`),
+  KEY `FK_talk_to` (`l_to`),
+  CONSTRAINT `FK_talk_from` FOREIGN KEY (`l_from`) REFERENCES `User` (`u_id`),
+  CONSTRAINT `FK_talk_to` FOREIGN KEY (`l_to`) REFERENCES `User` (`u_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Talk`
+--
+
+LOCK TABLES `Talk` WRITE;
+/*!40000 ALTER TABLE `Talk` DISABLE KEYS */;
+INSERT INTO `Talk` VALUES ('L000000000000001','U000000000000001','U000000000000006','/Users/JuN/myfile/java/classCircle/target/muggle/photo/fc109b2f-2e3f-4913-9b40-c6d8104bf45c2017-04-25&15:55:32.jpg','','2017-04-25 15:55:32'),('L000000000000002','U000000000000006','U000000000000001','/Users/JuN/myfile/java/classCircle/target/muggle/audio/1bd0067b-af89-4c96-92e5-80d3c7672ea92017-04-25&16:07:35.mp3','','2017-04-25 16:07:35'),('L000000000000003','U000000000000006','U000000000000001','','老师好','2017-04-25 16:11:45');
+/*!40000 ALTER TABLE `Talk` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Teacher`
 --
 
@@ -435,6 +528,10 @@ BEGIN
     SET oldId = (SELECT t_id FROM Teacher ORDER BY t_id DESC LIMIT 1);
   ELSEIF in_table = 'U' THEN
     SET oldId = (SELECT u_id FROM User ORDER BY u_id DESC LIMIT 1);
+  ELSEIF in_table = 'N' THEN 
+    SET oldId = (SELECT n_id FROM Notice ORDER BY n_id DESC LIMIT 1);
+  ELSEIF in_table = 'L' THEN 
+    SET oldId = (SELECT l_id FROM Talk ORDER BY l_id DESC LIMIT 1);
   END IF;
   IF oldId IS NOT NULL THEN
       SET id = cast(SUBSTRING(oldId,2,15) AS UNSIGNED);
@@ -492,6 +589,10 @@ BEGIN
       SET oldId = (SELECT t_id FROM Teacher ORDER BY t_id DESC LIMIT 1);
     ELSEIF in_table = 'U' THEN
       SET oldId = (SELECT u_id FROM User ORDER BY u_id DESC LIMIT 1);
+    ELSEIF in_table = 'N' THEN 
+      SET oldId = (SELECT n_id FROM Notice ORDER BY n_id DESC LIMIT 1);
+    ELSEIF in_table = 'L' THEN 
+      SET oldId = (SELECT l_id FROM Talk ORDER BY l_id DESC LIMIT 1);
     END IF;
     IF oldId IS NOT NULL THEN
       SET id = cast(SUBSTRING(oldId,2,15) AS UNSIGNED);
@@ -535,6 +636,8 @@ BEGIN
       SET oldId = (SELECT tc_id FROM TC ORDER BY tc_id DESC LIMIT 1);
     ELSEIF in_table = 'Z' THEN
       SET oldId = (SELECT z_id FROM Z ORDER BY z_id DESC LIMIT 1);
+    ELSEIF in_table = 'NS' THEN 
+      SET oldId = (SELECT id FROM NoticeSign ORDER BY id DESC LIMIT 1);
     END IF;
     IF oldId IS NOT NULL THEN
       SET newId = oldId;
@@ -571,6 +674,8 @@ BEGIN
       SET oldId = (SELECT tc_id FROM TC ORDER BY tc_id DESC LIMIT 1);
     ELSEIF in_table = 'Z' THEN
       SET oldId = (SELECT z_id FROM Z ORDER BY z_id DESC LIMIT 1);
+    ELSEIF in_table = 'NS' THEN 
+      SET oldId = (SELECT id FROM NoticeSign ORDER BY id DESC LIMIT 1);
     END IF;
     IF oldId IS NOT NULL THEN
       SET newId = oldId + 1;
@@ -623,6 +728,74 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `addNotice` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `addNotice`(
+  IN in_user CHAR(16),
+  IN in_class CHAR(16),
+  IN in_content TEXT,
+  OUT resultCode INT
+)
+BEGIN
+    DECLARE error_flag INT;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET error_flag = -1;
+    START TRANSACTION ;
+    INSERT INTO Notice VALUES (getCharId('N'),in_user,in_class,in_content,sysdate());
+    SELECT getCurrentCharId('N');
+    IF error_flag = -1 THEN 
+      SET resultCode = -1;
+      ROLLBACK ;
+    ELSE
+      SET resultCode = 1;
+      COMMIT ;
+    END IF;
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `addNoticeSign` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `addNoticeSign`(
+  in in_notice CHAR(16),
+  in in_user CHAR(16),
+  out resultCode int
+)
+BEGIN
+    DECLARE error_flag INT;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET error_flag = -1;
+    START TRANSACTION ;
+    INSERT INTO NoticeSign VALUES (getIntId('NS'),in_notice,in_user,sysdate());
+    IF error_flag = -1 THEN
+      SET resultCode = -1;
+      ROLLBACK ;
+    ELSE
+      SET resultCode = 1;
+      COMMIT ;
+    END IF;
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `addStudent` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -653,6 +826,42 @@ BEGIN
     COMMIT ;
   END IF;
 END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `addTalk` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `addTalk`(
+  in in_from CHAR(16),
+  in in_to CHAR(16),
+  IN in_path TEXT,
+  IN in_content TEXT,
+  out resultCode int
+)
+BEGIN
+    DECLARE error_flag INT;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET error_flag = -1;
+    START TRANSACTION ;
+    INSERT INTO Talk VALUES (getCharId('L'),in_from,in_to,in_path,in_content,sysdate());
+    SELECT getCurrentCharId('L');
+    IF error_flag = -1 THEN
+      SET resultCode = -1;
+      ROLLBACK ;
+    ELSE
+      SET resultCode = 1;
+      COMMIT ;
+    END IF;
+  END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -757,6 +966,70 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `deleteNotice` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteNotice`(
+  IN in_notice CHAR(16),
+  OUT resultCode INT
+)
+BEGIN
+    DECLARE error_flag INT;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET error_flag = -1;
+    START TRANSACTION ;
+    DELETE FROM Notice WHERE n_id = in_notice;
+    IF error_flag = -1 THEN
+      SET resultCode = -1;
+      ROLLBACK ;
+    ELSE
+      SET resultCode = 1;
+      COMMIT ;
+    END IF;
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `deleteTalk` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteTalk`(
+  IN in_talk CHAR(16),
+  out resultCode int
+)
+BEGIN
+    DECLARE error_flag INT;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET error_flag = -1;
+    START TRANSACTION ;
+    DELETE FROM Talk WHERE l_id = in_talk;
+    IF error_flag = -1 THEN
+      SET resultCode = -1;
+      ROLLBACK ;
+    ELSE
+      SET resultCode = 1;
+      COMMIT ;
+    END IF;
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `getClassInfo` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -820,6 +1093,75 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `getClassTeachers`(
 BEGIN
    SELECT u_id,t_name,t_header,Subject.name,t_telephone,t_power FROM Teacher LEFT JOIN Subject ON Teacher.t_subject = Subject.id JOIN TC ON Teacher.t_id = TC.tc_teacher JOIN User ON Teacher.t_id = User.u_teacher WHERE tc_class = in_class;
    SET resultCode = 1;
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `getContacts` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getContacts`(
+  IN in_class CHAR(16),
+  out resultCode int
+)
+BEGIN
+    CREATE TEMPORARY TABLE IF NOT EXISTS tmp_contacts(
+        user CHAR(16) PRIMARY KEY NOT NULL ,
+        name VARCHAR(20) NOT NULL ,
+        header TEXT,
+        type BIT NOT NULL ,
+        subject VARCHAR(20),
+        power BIT,
+        student VARCHAR(20)
+    );
+    TRUNCATE TABLE tmp_contacts;
+    INSERT INTO  tmp_contacts SELECT u_id,t_name,t_header,b'1',Subject.name,t_power,NULL FROM User LEFT JOIN Teacher ON User.u_teacher = Teacher.t_id JOIN Subject ON Teacher.t_subject = Subject.id JOIN TC ON Teacher.t_id = TC.tc_teacher WHERE tc_class = in_class;
+    INSERT INTO tmp_contacts SELECT u_id,p_name,p_header,b'0',NULL,NULL,s_name FROM User LEFT JOIN Parent ON User.u_parent = Parent.p_id JOIN PS ON Parent.p_id = PS.ps_parent JOIN Student ON PS.ps_student = Student.s_id WHERE s_class = in_class;
+    SELECT * FROM tmp_contacts;
+    SET resultCode = 1;
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `getNotices` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getNotices`(
+  IN in_class CHAR(16),
+  OUT resultCode INT
+)
+BEGIN
+    DECLARE error_flag INT;
+    DECLARE counts INT DEFAULT 0;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET error_flag = -1;
+    START TRANSACTION ;
+    SET counts = (SELECT count(s_id) FROM Student WHERE s_class = in_class);
+    SELECT n_id,n_user,n_content,n_time,t_header,Subject.name,t_power,count(NoticeSign.id),counts FROM Notice JOIN User ON Notice.n_user = User.u_id LEFT JOIN Teacher ON User.u_teacher = Teacher.t_id JOIN Subject ON Teacher.t_subject = Subject.id LEFT JOIN NoticeSign ON Notice.n_id = NoticeSign.notice WHERE n_class = in_class ORDER BY n_time ASC ;
+    IF error_flag = -1 THEN
+      SET resultCode = -1;
+      ROLLBACK ;
+    ELSE
+      SET resultCode = 1;
+      COMMIT ;
+    END IF;
   END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1059,6 +1401,42 @@ BEGIN
     WHERE s_class = in_class;
     SELECT * FROM tmp_message ORDER BY m_time DESC LIMIT startIndex,50;
     SET resultCode = 1;
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `loadTalks` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `loadTalks`(
+  IN in_user1 CHAR(16),
+  IN in_user2 CHAR(16),
+  IN flag INT,
+  out resultCode int
+)
+BEGIN
+    DECLARE error_flag INT;
+    DECLARE startIndex INT;
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET error_flag = -1;
+    START TRANSACTION ;
+    SET startIndex = flag * 20;
+    SELECT l_id,l_from,l_path,l_content,l_time FROM Talk WHERE (l_from = in_user1 AND l_to = in_user2) OR (l_from = in_user2 AND l_to = in_user1) ORDER BY l_time DESC LIMIT startIndex,20;
+    IF error_flag = -1 THEN
+      SET resultCode = -1;
+      ROLLBACK ;
+    ELSE
+      SET resultCode = 1;
+      COMMIT ;
+    END IF;
   END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1853,4 +2231,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-22 10:21:57
+-- Dump completed on 2017-04-25 18:15:51
