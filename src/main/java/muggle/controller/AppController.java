@@ -2,6 +2,7 @@ package muggle.controller;/**
  * Created by JuN on 2017/4/20.
  */
 
+import entity.params.Notice;
 import muggle.service.IAppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -97,6 +98,46 @@ public class AppController {
     @RequestMapping(value = "/loadMessage",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
     public String loadMessage(@RequestParam(value = "message") String message){
         return service.loadMessage(message);
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/loadContacts",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+    public String loadContacts(@RequestParam(value = "class") String classId){
+        return service.loadContacts(classId);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/addNotice",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    public String addNotice(
+            @RequestParam(value = "user") String user,
+            @RequestParam(value = "class") String classId,
+            @RequestParam(value = "content") String content)
+    {
+        return service.addNotice(user,classId,content);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/deleteNotice",method = RequestMethod.POST,produces = "text/html")
+    public String deleteNotice(@RequestParam(value = "notice") String notice){
+        return service.deleteNotice(notice);
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/getNotices",method = RequestMethod.GET,produces = "text/html;charset=UTF-8")
+    public String getNotices(@RequestParam(value = "class") String classId){
+        return service.getNotices(classId);
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/addNoticeSign",method = RequestMethod.POST,produces = "text/html")
+    public String addNoticeSign(
+            @RequestParam(value = "notice") String notice,
+            @RequestParam(value = "user") String user)
+    {
+        return service.addNoticeSign(notice,user);
     }
 
 }

@@ -94,4 +94,15 @@ public class SQL {
     public static final String PROCEDURE_GET_SCHOOL = "{call getSchool(?)}";
 
     public static final String PROCEDURE_GET_SUBJECT = "{call getSubject(?)}";
+
+    public static final String PROCEDURE_GET_CONTACTS = "{call getContacts(?,?)}";
+
+    public static final String PROCEDURE_ADD_NOTICE = "{call addNotice(?,?,?,?)}";
+
+    public static final String PROCEDURE_DELETE_NOTICE = "{call deleteNotice(?,?)}";
+
+    public static final String PROCEDURE_GET_NOTICES = "{call getNotices(?,?)}";
+
+    public static final String PROCEDURE_ADD_NOTICE_SIGN = "{call addNoticeSign(?,?,?)}";
+
 }

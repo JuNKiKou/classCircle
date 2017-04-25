@@ -2,6 +2,8 @@ package muggle.service.impl;/**
  * Created by JuN on 2017/4/20.
  */
 
+import com.sun.tools.corba.se.idl.constExpr.Not;
+import entity.params.Notice;
 import muggle.constant.JSONKey;
 import muggle.constant.JSONValue;
 import muggle.constant.Path;
@@ -114,6 +116,27 @@ public class AppServiceImpl implements IAppService{
 
     public String loadMessage(String message) {
         return dao.loadMessage(message);
+    }
+
+    public String loadContacts(String classId) {
+        return dao.loadContacts(classId);
+    }
+
+    public String addNotice(String user,String classId,String content) {
+        Notice notice = new Notice(user,classId,content);
+        return dao.addNotice(notice);
+    }
+
+    public String deleteNotice(String notice) {
+        return dao.deleteNotice(notice);
+    }
+
+    public String addNoticeSign(String notice, String user) {
+        return dao.addNoticeSign(notice,user);
+    }
+
+    public String getNotices(String classId) {
+        return dao.getNotices(classId);
     }
 
     private String dealMedia(MultipartFile file, String path){

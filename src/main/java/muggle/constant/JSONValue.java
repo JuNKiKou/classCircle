@@ -59,6 +59,10 @@ public class JSONValue {
 
     public static final String SEND_SMS_ERROR = "获取短信验证码异常";
 
+    public static final String LOAD_CONTACTS_ERROR = "获取联系人异常";
+
+    public static final String NOTICE_ERROR = "公告操作失败";
+
     private static Map<String,Integer> instance = new HashMap<String, Integer>();
 
 
@@ -86,6 +90,8 @@ public class JSONValue {
         instance.put(SEARCH_CLASS_ERROR,501);
         instance.put(LOAD_MESSAGE_ERROR,502);
         instance.put(SEND_SMS_ERROR,503);
+        instance.put(LOAD_CONTACTS_ERROR,504);
+        instance.put(NOTICE_ERROR,505);
     }
 
 

@@ -42,4 +42,9 @@ public class JSONKey {
 
     public static final String SMS = "sms";
 
+    public static final String CONTACTS = "contacts";
+
+    public static final String NOTICE = "notice";
+
+    public static final String NOTICES = "notices";
 }

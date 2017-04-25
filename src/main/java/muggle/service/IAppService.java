@@ -1,5 +1,6 @@
 package muggle.service;
 
+import entity.params.Notice;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -22,5 +23,18 @@ public interface IAppService {
     public abstract String loadMessages(String classId,int counts);
 
     public abstract String loadMessage(String message);
+
+
+    //2.0
+
+    public abstract String loadContacts(String classId);
+
+    public abstract String addNotice(String user,String classId,String content);
+
+    public abstract String deleteNotice(String notice);
+
+    public abstract String getNotices(String classId);
+
+    public abstract String addNoticeSign(String notice,String user);
 }
 

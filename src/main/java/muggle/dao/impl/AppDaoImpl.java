@@ -2,10 +2,8 @@ package muggle.dao.impl;/**
  * Created by JuN on 2017/4/17.
  */
 
-import entity.returns.Comment;
-import entity.returns.Message;
-import entity.returns.Reply;
-import entity.returns.Z;
+import entity.params.Notice;
+import entity.returns.*;
 import muggle.constant.JSONKey;
 import muggle.constant.JSONValue;
 import muggle.constant.SQL;
@@ -334,7 +332,179 @@ public class AppDaoImpl extends BaseDaoImpl implements IAppDao{
         return result.toString();
     }
 
-    private int getComments(Connection connection,Message instance,boolean flag){
+    public String loadContacts(String classId) {
+        JSONObject result = new JSONObject();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        Connection connection = getUnit().getConnection();
+        String sql = SQL.PROCEDURE_GET_CONTACTS;
+        List<Contact> contactList = new ArrayList<Contact>();
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,classId);
+            statement.registerOutParameter(2,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(2);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    Contact contact = new Contact(
+                            set.getString(1),
+                            set.getString(2),
+                            set.getString(3),
+                            set.getBoolean(4),
+                            set.getString(5),
+                            set.getBoolean(6),
+                            set.getString(7)
+                    );
+                    contactList.add(contact);
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.LOAD_CONTACTS_ERROR);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        } finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        Contact[] contacts = contactList.toArray(new Contact[contactList.size()]);
+        result.put(JSONKey.CONTACTS,Contact.fixValues(contacts));
+        return result.toString();
+    }
+
+    public String addNotice(Notice notice) {
+        JSONObject result = new JSONObject();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        Connection connection = getUnit().getConnection();
+        String sql = SQL.PROCEDURE_ADD_NOTICE;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,notice.getUser());
+            statement.setString(2,notice.getClassId());
+            statement.setString(3,notice.getContent());
+            statement.registerOutParameter(4,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(4);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    result.put(JSONKey.NOTICE,set.getString(1));
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.NOTICE_ERROR);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        } finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        return result.toString();
+    }
+
+    public String deleteNotice(String notice) {
+        JSONObject result = new JSONObject();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        Connection connection = getUnit().getConnection();
+        String sql = SQL.PROCEDURE_DELETE_NOTICE;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,notice);
+            statement.registerOutParameter(2,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(2);
+            if (code != 1){
+                resultCode = JSONValue.get(JSONValue.NOTICE_ERROR);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        } finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        return result.toString();
+    }
+
+    public String getNotices(String classId) {
+        JSONObject result = new JSONObject();
+        Connection connection = getUnit().getConnection();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        String sql = SQL.PROCEDURE_GET_NOTICES;
+        List<entity.returns.Notice> noticeList = new ArrayList<entity.returns.Notice>();
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,classId);
+            statement.registerOutParameter(2,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(2);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    entity.returns.Notice notice = new entity.returns.Notice(
+                            set.getString(1),
+                            set.getString(2),
+                            set.getString(3),
+                            set.getString(4),
+                            set.getString(5),
+                            set.getString(6),
+                            set.getBoolean(7),
+                            set.getInt(8),
+                            set.getInt(9)
+                    );
+                    noticeList.add(notice);
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.NOTICE_ERROR);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        } finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        entity.returns.Notice[] notices = noticeList.toArray(new entity.returns.Notice[noticeList.size()]);
+        result.put(JSONKey.NOTICES, entity.returns.Notice.fixValues(notices));
+        return result.toString();
+    }
+
+    public String addNoticeSign(String notice, String user) {
+        JSONObject result = new JSONObject();
+        Connection connection = getUnit().getConnection();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        String sql = SQL.PROCEDURE_ADD_NOTICE_SIGN;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,notice);
+            statement.setString(2,user);
+            statement.registerOutParameter(3,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(3);
+            if (code != 1){
+                resultCode = JSONValue.get(JSONValue.NOTICE_ERROR);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        } finally {
+            getUnit().closeConnection(connection);
+        }
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        return result.toString();
+    }
+
+    private int getComments(Connection connection, Message instance, boolean flag){
         String sql = SQL.PROCEDURE_LOAD_COMMENT;
         int resultCode = JSONValue.get(JSONValue.SUCCESS);
         List<Comment> cs = new ArrayList<Comment>();
