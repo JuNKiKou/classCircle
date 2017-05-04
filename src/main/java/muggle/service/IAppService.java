@@ -42,5 +42,9 @@ public interface IAppService {
     public abstract String deleteTalk(String talk);
 
     public abstract String loadTalks(String user1,String user2,int count);
+
+    public abstract String loadMessageCount(String classId,long timeStamp);
+
+    public abstract String loadNoticeCount(String classId,long timeStamp);
 }
 

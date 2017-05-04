@@ -111,4 +111,8 @@ public class SQL {
 
     public static final String PROCEDURE_LOAD_TALKS = "{call loadTalks(?,?,?,?)}";
 
+    public static final String PROCEDURE_LOAD_MESSAGE_COUNT = "{call loadMessageCount(?,?,?)}";
+
+    public static final String PROCEDURE_LOAD_NOTICE_COUNT = "{call loadNoticeCount(?,?,?)}";
+
 }

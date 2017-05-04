@@ -51,4 +51,6 @@ public class JSONKey {
     public static final String TALK = "talk";
 
     public static final String TALKS = "talks";
+
+    public static final String COUNTS = "counts";
 }

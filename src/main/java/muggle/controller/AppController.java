@@ -6,10 +6,7 @@ import entity.params.Notice;
 import muggle.service.IAppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -19,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @create2017-04-20 12:57
  */
 @Controller
+@CrossOrigin
 @RequestMapping("/app")
 public class AppController {
 
@@ -168,4 +166,24 @@ public class AppController {
     ){
         return service.loadTalks(user1,user2,count);
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/loadMessageCount",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    public String loadMessageCount(
+            @RequestParam(value = "class") String classId,
+            @RequestParam(value = "time") long time)
+    {
+        return service.loadMessageCount(classId,time);
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/loadNoticeCount",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
+    public String loadNoticeCount(
+            @RequestParam(value = "class") String classId,
+            @RequestParam(value = "time") long time)
+    {
+        return service.loadNoticeCount(classId,time);
+    }
+
 }

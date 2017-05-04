@@ -24,11 +24,11 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
         <property name="suffix" value=".jsp"/>    <!-- 后缀 -->
     </bean>
     <!-- 访问静态文件（jpg,js,css）的方法 -->
-    <!--<mvc:resources location="/files/" mapping="/files/**" /> -->
-    <!--<mvc:resources location="/filesOut/" mapping="/filesOut/**" />-->
-    <!--<mvc:resources location="/scripts/" mapping="/scripts/**" />-->
-    <!--<mvc:resources location="/styles/" mapping="/styles/**" />-->
-    <!--<mvc:resources location="/Views/" mapping="/Views/**" />-->
+    <mvc:resources location="/photo/" mapping="/photo/**" />
+    <mvc:resources location="/radio/" mapping="/radio/**" />
+    <mvc:resources location="/audio/" mapping="/audio/**" />
+    <mvc:resources location="/index/" mapping="/index/**" />
+    <mvc:resources location="/header/" mapping="/header/**" />
 
 
     <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver"

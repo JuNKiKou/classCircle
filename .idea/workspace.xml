@@ -9,35 +9,48 @@
     <list default="true" id="34ad5a81-f1a4-41d7-a6c3-8bc4481bb382" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/sql/classCircle.sql" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/muggle/WEB-INF/sql/classCircle.sql" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classCircle.war" afterPath="$PROJECT_DIR$/target/classCircle.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/muggle/constant/JSONKey.class" afterPath="$PROJECT_DIR$/target/classes/muggle/constant/JSONKey.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/muggle/constant/JSONValue.class" afterPath="$PROJECT_DIR$/target/classes/muggle/constant/JSONValue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/muggle/constant/Path.class" afterPath="$PROJECT_DIR$/target/classes/muggle/constant/Path.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/muggle/constant/SQL.class" afterPath="$PROJECT_DIR$/target/classes/muggle/constant/SQL.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/muggle/controller/AppController.class" afterPath="$PROJECT_DIR$/target/classes/muggle/controller/AppController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/muggle/controller/GeneralController.class" afterPath="$PROJECT_DIR$/target/classes/muggle/controller/GeneralController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/muggle/controller/WebController.class" afterPath="$PROJECT_DIR$/target/classes/muggle/controller/WebController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/muggle/dao/IAppDao.class" afterPath="$PROJECT_DIR$/target/classes/muggle/dao/IAppDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/muggle/dao/impl/AppDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/muggle/dao/impl/AppDaoImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/muggle/service/IAppService.class" afterPath="$PROJECT_DIR$/target/classes/muggle/service/IAppService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/muggle/service/impl/AppServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/muggle/service/impl/AppServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/constant/JSONKey.class" afterPath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/constant/JSONKey.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/constant/JSONValue.class" afterPath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/constant/JSONValue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/constant/Path.class" afterPath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/constant/Path.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/constant/SQL.class" afterPath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/constant/SQL.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/controller/AppController.class" afterPath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/controller/AppController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/controller/GeneralController.class" afterPath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/controller/GeneralController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/controller/WebController.class" afterPath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/controller/WebController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/dao/IAppDao.class" afterPath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/dao/IAppDao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/dao/impl/AppDaoImpl.class" afterPath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/dao/impl/AppDaoImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/service/IAppService.class" afterPath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/service/IAppService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/service/impl/AppServiceImpl.class" afterPath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/muggle/service/impl/AppServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/classCircle_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/classCircle_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/a2b41fba-83e9-47c2-b98e-3312e9f2e83c.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/a2b41fba-83e9-47c2-b98e-3312e9f2e83c.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/taobao_sdk_java_auto_1455552377940_20160607_source.xml" afterPath="$PROJECT_DIR$/.idea/libraries/taobao_sdk_java_auto_1455552377940_20160607_source.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classCircle.iml" afterPath="$PROJECT_DIR$/classCircle.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/muggle/constant/JSONKey.java" afterPath="$PROJECT_DIR$/src/main/java/muggle/constant/JSONKey.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/muggle/constant/JSONValue.java" afterPath="$PROJECT_DIR$/src/main/java/muggle/constant/JSONValue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/muggle/constant/Path.java" afterPath="$PROJECT_DIR$/src/main/java/muggle/constant/Path.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/muggle/constant/SQL.java" afterPath="$PROJECT_DIR$/src/main/java/muggle/constant/SQL.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/muggle/controller/AppController.java" afterPath="$PROJECT_DIR$/src/main/java/muggle/controller/AppController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/muggle/controller/GeneralController.java" afterPath="$PROJECT_DIR$/src/main/java/muggle/controller/GeneralController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/muggle/controller/WebController.java" afterPath="$PROJECT_DIR$/src/main/java/muggle/controller/WebController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/muggle/dao/IAppDao.java" afterPath="$PROJECT_DIR$/src/main/java/muggle/dao/IAppDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/muggle/dao/impl/AppDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/muggle/dao/impl/AppDaoImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/muggle/service/IAppService.java" afterPath="$PROJECT_DIR$/src/main/java/muggle/service/IAppService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/muggle/service/impl/AppServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/muggle/service/impl/AppServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/resources/dispatcher-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/target/classes/dispatcher-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/target/muggle/WEB-INF/classes/dispatcher-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/muggle/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/muggle/WEB-INF/web.xml" />
     </list>
     <ignored path="classCircle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -105,7 +118,7 @@
     <favorites_list name="classCircle" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -125,17 +138,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/muggle/controller/WebController.java" />
-        <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.comment" />
-        <option value="$PROJECT_DIR$/src/main/java/muggle/dao/IGeneralDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/returns/Subject.java" />
-        <option value="dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.School" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/returns/School.java" />
-        <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getSubject" />
         <option value="$PROJECT_DIR$/src/main/java/muggle/dao/impl/GeneralDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/muggle/service/IGeneralService.java" />
         <option value="$PROJECT_DIR$/src/main/java/muggle/service/impl/GeneralServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/muggle/controller/GeneralController.java" />
         <option value="$PROJECT_DIR$/src/main/java/muggle/helper/SmsHelper.java" />
         <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getClassTeachers" />
         <option value="dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Teacher" />
@@ -153,29 +158,37 @@
         <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getClassStudents" />
         <option value="$PROJECT_DIR$/src/main/java/entity/returns/Notice.java" />
         <option value="dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Class" />
-        <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getNotices" />
-        <option value="dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.NoticeSign" />
         <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getIntId" />
         <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getCurrentIntId" />
         <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.addNoticeSign" />
-        <option value="dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Talk" />
         <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getCurrentCharId" />
         <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.addTalk" />
-        <option value="$PROJECT_DIR$/src/main/java/muggle/constant/JSONValue.java" />
         <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.deleteTalk" />
         <option value="$PROJECT_DIR$/src/main/java/muggle/constant/Path.java" />
         <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getUserInfo" />
-        <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.loadMessage" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/muggle/dao/IAppDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/muggle/constant/SQL.java" />
         <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.loadTalks" />
         <option value="$PROJECT_DIR$/src/main/java/entity/returns/Talk.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/dispatcher-servlet.xml" />
+        <option value="dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.NoticeSign" />
+        <option value="dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Talk" />
+        <option value="$PROJECT_DIR$/src/main/java/muggle/controller/GeneralController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/muggle/controller/WebController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/muggle/constant/JSONValue.java" />
         <option value="$PROJECT_DIR$/src/main/java/muggle/constant/JSONKey.java" />
-        <option value="$PROJECT_DIR$/src/main/java/muggle/dao/impl/AppDaoImpl.java" />
+        <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getNotices" />
+        <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.loadMessage" />
+        <option value="$PROJECT_DIR$/src/main/java/muggle/dao/IAppDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/muggle/constant/SQL.java" />
         <option value="$PROJECT_DIR$/src/main/java/muggle/service/IAppService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/muggle/service/impl/AppServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/muggle/controller/AppController.java" />
+        <option value="dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Message" />
+        <option value="$PROJECT_DIR$/src/main/java/muggle/service/impl/AppServiceImpl.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/muggle/dao/impl/AppDaoImpl.java" />
+        <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.loadMessageCount" />
+        <option value="dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.loadNoticeCount" />
       </list>
     </option>
   </component>
@@ -231,9 +244,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -241,15 +252,9 @@
               <option name="myItemId" value="classCircle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="classCircle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classCircle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -259,50 +264,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="classCircle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classCircle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classCircle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="muggle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classCircle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classCircle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="muggle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -351,36 +312,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classCircle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classCircle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sql" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -645,47 +576,11 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="returns" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classCircle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classCircle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="params" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -696,7 +591,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/sdk-java-2016-06-07/taobao-sdk-java-auto_1455552377940-20160607.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/jarPackages/sdk-java-2016-06-07/taobao-sdk-java-auto_1455552377940-20160607.jar!/" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
@@ -1045,11 +940,16 @@
       <workItem from="1493004947428" duration="376000" />
       <workItem from="1493079975911" duration="13718000" />
       <workItem from="1493104363814" duration="6482000" />
+      <workItem from="1493115852648" duration="108000" />
+      <workItem from="1493707217771" duration="1079000" />
+      <workItem from="1493708441363" duration="1237000" />
+      <workItem from="1493780393459" duration="205000" />
+      <workItem from="1493858725860" duration="6693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158528000" />
+    <option name="totallyTimeSpent" value="167850000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1069,20 +969,21 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24745269" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36681223" sideWeight="0.50325733" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980457" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38719067" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2518195" sideWeight="0.49674267" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.49674267" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26491994" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980457" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2532751" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2489083" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21905537" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21905537" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24022801" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20114006" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1092,7 +993,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1148,122 +1048,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/service/IGeneralService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/helper/SmsHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
-          <folding>
-            <element signature="method#randomCode#0;class#SmsHelper#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/service/impl/GeneralServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/controller/GeneralController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Subject">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getClassTeachers">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/returns/Contact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1145">
-          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/params/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-715">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/params/Parent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.addNotice">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.deleteNotice">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.TC">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/params/Notice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="18" column="64" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Teacher">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getCharId">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1285,25 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Class">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getNotices">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.addClass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1315,9 +1080,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1335,18 +1097,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.NoticeSign">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.addNoticeSign">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1355,6 +1105,156 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Student">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getCurrentCharId">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-973">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.deleteTalk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.addTalk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/muggle/photo/fc109b2f-2e3f-4913-9b40-c6d8104bf45c2017-04-25&amp;15:55:32.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/helper/LoadHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-805">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getUserInfo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.loadTalks">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/returns/Talk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/constant/Path.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/helper/SmsHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1289">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.NoticeSign">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Z">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Comment">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Talk">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Reply">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1390,10 +1290,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Notice">
+    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/controller/GeneralController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/controller/WebController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/constant/JSONValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="99" column="47" selection-start-line="99" selection-start-column="47" selection-end-line="99" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/constant/JSONKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getNotices">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="11" column="349" selection-start-line="11" selection-start-column="349" selection-end-line="11" selection-end-column="349" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.loadMessage">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/dao/IAppDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="49" column="74" selection-start-line="49" selection-start-column="74" selection-end-line="49" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/constant/SQL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="115" column="93" selection-start-line="115" selection-start-column="93" selection-end-line="115" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/controller/AppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="185" column="53" selection-start-line="185" selection-start-column="53" selection-end-line="185" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.TC">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1402,198 +1377,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getCurrentCharId">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-973">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/constant/JSONValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="96" column="37" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.deleteTalk">
-      <provider selected="true" editor-type-id="text-editor">
+    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Teacher">
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.addTalk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/constant/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/muggle/photo/fc109b2f-2e3f-4913-9b40-c6d8104bf45c2017-04-25&amp;15:55:32.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/helper/LoadHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-805">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.getUserInfo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.loadMessage">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-67">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/constant/SQL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="111" column="82" selection-start-line="111" selection-start-column="82" selection-end-line="111" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/dao/IAppDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="43" column="74" selection-start-line="43" selection-start-column="74" selection-end-line="43" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.loadTalks">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/returns/Talk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1546#1547#0" expanded="true" />
-            <element signature="e#1571#1572#0" expanded="true" />
-            <element signature="e#1604#1605#0" expanded="true" />
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#1664#1665#0" expanded="true" />
-            <element signature="e#1691#1692#0" expanded="true" />
-            <element signature="e#1725#1726#0" expanded="true" />
-            <element signature="e#1755#1756#0" expanded="true" />
-            <element signature="e#1786#1787#0" expanded="true" />
-            <element signature="e#1813#1814#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/constant/JSONKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Talk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/dao/impl/AppDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="565" column="67" selection-start-line="565" selection-start-column="67" selection-end-line="565" selection-end-column="67" />
-          <folding>
-            <element signature="method#sendMessage#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="method#deleteMessage#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="method#giveZ#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="method#modifyZ#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="method#comment#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="method#reply#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="method#loadMessages#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="method#loadMessage#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="method#loadContacts#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="e#12788#12797#0" expanded="true" />
-            <element signature="method#addNotice#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="method#deleteNotice#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="method#getNotices#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="e#16975#16998#0" expanded="true" />
-            <element signature="method#addNoticeSign#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="method#addTalk#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="method#deleteTalk#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="method#loadTalks#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="e#22390#22396#0" expanded="true" />
-            <element signature="method#getComments#0;class#AppDaoImpl#0" expanded="false" />
-            <element signature="method#getZs#0;class#AppDaoImpl#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/service/IAppService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="43" column="74" selection-start-line="43" selection-start-column="74" selection-end-line="43" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/service/impl/AppServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="166" column="48" selection-start-line="166" selection-start-column="48" selection-end-line="166" selection-end-column="48" />
-          <folding>
-            <element signature="method#sendMessage#0;class#AppServiceImpl#0" expanded="false" />
-            <element signature="method#addNotice#0;class#AppServiceImpl#0" expanded="false" />
-            <element signature="method#addTalk#0;class#AppServiceImpl#0" expanded="false" />
-            <element signature="e#4948#4949#0" expanded="true" />
-            <element signature="e#5003#5004#0" expanded="true" />
-            <element signature="method#dealMedia#0;class#AppServiceImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1610,18 +1403,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/controller/AppController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/service/IAppService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="166" column="46" selection-start-line="166" selection-start-column="46" selection-end-line="166" selection-end-column="46" />
+        <state relative-caret-position="272">
+          <caret line="47" column="74" selection-start-line="47" selection-start-column="74" selection-end-line="47" selection-end-column="74" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Message">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Class">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/dao/impl/AppDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="723" column="49" selection-start-line="723" selection-start-column="49" selection-end-line="723" selection-end-column="49" />
+          <folding>
+            <element signature="method#loadTalks#0;class#AppDaoImpl#0" expanded="false" />
+            <element signature="method#loadNoticeCount#0;class#AppDaoImpl#0" expanded="false" />
+            <element signature="method#getComments#0;class#AppDaoImpl#0" expanded="false" />
+            <element signature="method#getZs#0;class#AppDaoImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/muggle/service/impl/AppServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="173" column="50" selection-start-line="173" selection-start-column="50" selection-end-line="173" selection-end-column="50" />
+          <folding>
+            <element signature="method#dealMedia#0;class#AppServiceImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.Notice">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/sql/classCircle.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-1440">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.loadMessageCount">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbroutine:/d871ba40/a2b41fba-83e9-47c2-b98e-3312e9f2e83c/classCircle.loadNoticeCount">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1632,7 +1511,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>classCircle:war exploded</last-edited>
+          <last-edited>classCircle:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

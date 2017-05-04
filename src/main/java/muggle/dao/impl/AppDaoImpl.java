@@ -606,6 +606,18 @@ public class AppDaoImpl extends BaseDaoImpl implements IAppDao{
         return result.toString();
     }
 
+
+    public String loadMessageCount(String classId, Timestamp time) {
+
+        String sql = SQL.PROCEDURE_LOAD_MESSAGE_COUNT;
+        return getCounts(classId,time,sql);
+    }
+
+    public String loadNoticeCount(String classId, Timestamp time) {
+        String sql = SQL.PROCEDURE_LOAD_NOTICE_COUNT;
+        return getCounts(classId,time,sql);
+    }
+
     private int getComments(Connection connection, Message instance, boolean flag){
         String sql = SQL.PROCEDURE_LOAD_COMMENT;
         int resultCode = JSONValue.get(JSONValue.SUCCESS);
@@ -699,6 +711,41 @@ public class AppDaoImpl extends BaseDaoImpl implements IAppDao{
         instance.setZs(zs);
 
         return resultCode;
+    }
+
+    private String getCounts(String classId,Timestamp time,String sql){
+        JSONObject result = new JSONObject();
+        Connection connection = getUnit().getConnection();
+        int resultCode = JSONValue.get(JSONValue.SUCCESS);
+        int counts = 0;
+        try {
+            CallableStatement statement = connection.prepareCall(sql);
+            statement.setString(1,classId);
+            statement.setString(2,time.toString());
+            statement.registerOutParameter(3,Types.INTEGER);
+            statement.execute();
+            int code = statement.getInt(3);
+            if (code == 1){
+                ResultSet set = statement.getResultSet();
+                while (set != null && set.next()){
+                    counts = set.getInt(1);
+                }
+                set.close();
+            }else {
+                resultCode = JSONValue.get(JSONValue.IM_LOAD_COUNTS_ERROR);
+            }
+            statement.close();
+        } catch (SQLException e) {
+            resultCode = JSONValue.get(JSONValue.SQL_PROCEDURE_EXECUTE_EXCEPTION);
+            e.printStackTrace();
+        } finally {
+            getUnit().closeConnection(connection);
+        }
+
+        result.put(JSONKey.RESULT_CODE,resultCode);
+        result.put(JSONKey.COUNTS,counts);
+
+        return result.toString();
     }
 }
 

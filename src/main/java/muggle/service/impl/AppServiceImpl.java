@@ -16,6 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 /**
  * app 服务实现类
  *
@@ -165,6 +168,16 @@ public class AppServiceImpl implements IAppService{
 
     public String loadTalks(String user1, String user2, int count) {
         return dao.loadTalks(user1,user2,count);
+    }
+
+    public String loadMessageCount(String classId, long timeStamp) {
+        Timestamp time = new Timestamp(timeStamp);
+        return dao.loadMessageCount(classId,time);
+    }
+
+    public String loadNoticeCount(String classId, long timeStamp) {
+        Timestamp time = new Timestamp(timeStamp);
+        return dao.loadNoticeCount(classId,time);
     }
 
     private String dealMedia(MultipartFile file, String path){

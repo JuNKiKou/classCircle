@@ -2,6 +2,8 @@ package muggle.dao;
 
 import entity.params.Notice;
 
+import java.sql.Timestamp;
+
 /**
  * Created by JuN on 2017/4/17.
  */
@@ -42,5 +44,9 @@ public interface IAppDao {
     public abstract String deleteTalk(String talk);
 
     public abstract String loadTalks(String user1,String user2,int count);
+
+    public abstract String loadMessageCount(String classId,Timestamp time);
+
+    public abstract String loadNoticeCount(String classId,Timestamp time);
 
 }
