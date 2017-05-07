@@ -65,14 +65,11 @@ public class AppDaoImpl extends BaseDaoImpl implements IAppDao{
             CallableStatement statement = connection.prepareCall(sql);
             statement.setString(1,message);
             statement.registerOutParameter(2,Types.INTEGER);
+            statement.registerOutParameter(3,Types.VARCHAR);
             statement.execute();
             int code = statement.getInt(2);
             if (code == 1){
-                ResultSet set = statement.getResultSet();
-                while (set != null && set.next()){
-                    path = set.getString(1);
-                }
-                set.close();
+                path = statement.getString(3);
             }else {
                 resultCode = JSONValue.get(JSONValue.DELETE_MESSAGE_ERROR);
             }

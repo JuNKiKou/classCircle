@@ -63,7 +63,7 @@ public class SQL {
 
     public static final String PROCEDURE_SEND_MESSAGE = "{call sendMessage(?,?,?,?,?)}";
 
-    public static final String PROCEDURE_DELETE_MESSAGE = "{call deleteMessage(?,?)}";
+    public static final String PROCEDURE_DELETE_MESSAGE = "{call deleteMessage(?,?,?)}";
 
     public static final String PROCEDURE_GIVE_Z = "{call giveZ(?,?,?)}";
 
