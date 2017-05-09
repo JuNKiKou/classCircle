@@ -55,6 +55,10 @@ public class Comment {
 
     private static final String STUDENT = "student";
 
+    public String getStudent() {
+        return student;
+    }
+
     public String getId() {
         return id;
     }
@@ -117,7 +121,7 @@ public class Comment {
             object.put(POWER,comment.isPower());
         }else {
             //家长
-            object.put(STUDENT,comment.STUDENT);
+            object.put(STUDENT,comment.getStudent());
         }
         object.put(ID,comment.getId());
         object.put(CONTENT,comment.getContent());
